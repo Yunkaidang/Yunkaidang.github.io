@@ -1,8 +1,8 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2025-12-23 23:18:00-0400
 inline: true
 related_posts: false
 ---
 
-A simple inline announcement.
+I have created my own personal academic homepage and hope for good luck in the future.
