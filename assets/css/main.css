@@ -537,13 +537,14 @@ footer.sticky-bottom {
 }
 .publications ol.bibliography li .preview {
   width: 100%;
-  min-width: 80px;
-  max-width: 200px;
+  min-width: 120px;
+  max-width: 220px;
 }
-.publications ol.bibliography li .preview img {
+.publications ol.bibliography li .preview img,
+.publications ol.bibliography li img.preview {
   width: 100%;
-  height: 120px;
-  object-fit: cover;
+  height: 140px;
+  object-fit: contain;
   display: block;
 }
 .publications ol.bibliography li .abbr {
