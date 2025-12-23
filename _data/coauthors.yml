@@ -1,34 +1,65 @@
-"Adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"Chen":
+  - firstname: ["D.", "Z."]
 
-"Podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Chua":
+  - firstname: ["T.-S."]
 
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Cui":
+  - firstname: ["G."]
 
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Gao":
+  - firstname: ["M."]
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Gu":
+  - firstname: ["Y."]
 
-"Przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
+"He":
+  - firstname: ["T."]
 
-"Schrödinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
+"Huang":
+  - firstname: ["K.", "S.", "W."]
 
-"Lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
+"Huo":
+  - firstname: ["J."]
 
-"Planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"Jiang":
+  - firstname: ["Z.", "P."]
+
+"Li":
+  - firstname: ["J.", "Q."]
+
+"Liu":
+  - firstname: ["A.", "D.", "J.", "Z."]
+
+"Lu":
+  - firstname: ["X."]
+
+"Pang":
+  - firstname: ["D."]
+
+"Qian":
+  - firstname: ["C."]
+
+"Sun":
+  - firstname: ["M."]
+
+"Wang":
+  - firstname: ["D.", "J.", "Z."]
+
+"Xu":
+  - firstname: ["Q."]
+
+"Yan":
+  - firstname: ["Y."]
+
+"Yao":
+  - firstname: ["Y."]
+
+"Yu":
+  - firstname: ["T."]
+
+"Zhang":
+  - firstname: ["H.", "J.", "M.", "X."]
+
+"Zou":
+  - firstname: ["X."]
