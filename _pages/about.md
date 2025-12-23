@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Ph.D. Student (1st year), Nanjing University · Advisor: Wenbin Li · M.S., Tianjin University
+subtitle: "Ph.D. Student (1st year), Nanjing University · Advisor: Wenbin Li · M.S., Tianjin University"
 
 profile:
   align: left
