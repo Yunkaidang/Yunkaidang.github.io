@@ -15,6 +15,7 @@ selected_papers: true
 social: true
 ---
 
-I am a first-year Ph.D. student at the School of Intelligence Science and Technology, Nanjing University, advised by [Prof. Wenbin Li](https://liwenbin.cn/).
+I am a first-year Ph.D. student at the School of Intelligence Science and Technology, Nanjing University, advised by [Prof. Wenbin Li](https://liwenbin.cn/) and co-supervised by [Prof. Yuekun Yang](https://is.nju.edu.cn/yyk/main.htm).
+
 
 My research focuses on **multimodal foundation models**, with particular interests in **high-resolution vision–language modeling**, **remote sensing foundation models**, and **uncertainty quantification and calibration** for model predictions and generated responses.
