@@ -71,6 +71,12 @@ layout: default
 
             </div>
           {%- endif %}
+
+          <!-- Visitor map -->
+          {%- if page.visitor_map %}
+            <h2>visitor map</h2>
+            {%- include visitor_map.html %}
+          {%- endif %}
         </article>
 
 </div>
