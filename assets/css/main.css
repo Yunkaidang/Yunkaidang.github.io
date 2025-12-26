@@ -336,8 +336,17 @@ blockquote {
 .social {
   text-align: center;
 }
+.social .contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+}
 .social .contact-icons {
   font-size: 4rem;
+  display: inline-flex;
+  gap: 24px;
 }
 .social .contact-icons a i::before {
   color: var(--global-text-color);
