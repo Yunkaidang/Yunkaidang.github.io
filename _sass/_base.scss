@@ -301,8 +301,18 @@ blockquote {
 .social {
   text-align: center;
 
+  .contact-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+  }
+
   .contact-icons {
     font-size: 4rem;
+    display: inline-flex;
+    gap: 24px;
 
     a {
       i::before {
