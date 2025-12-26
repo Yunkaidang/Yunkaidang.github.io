@@ -20,3 +20,10 @@ I am a first-year Ph.D. student at the School of Intelligence Science and Techno
 My research focuses on **multimodal foundation models**, with particular interests in **high-resolution vision–language modeling**, **remote sensing foundation models**, and **uncertainty quantification and calibration**.
 
 If you have any questions, please feel free to contact me at [yunkaidang1@gmail.com](mailto:yunkaidang1@gmail.com).
+
+## Visitor Map
+
+<div class="visitor-map" style="max-width: 320px;">
+  <script type="text/javascript" id="mapmyvisitors" src="//mapmyvisitors.com/map.js?d=BxZ-CKuO9gVlhQ-hdBov2xZ1gMK9V9XKIhFKWr1q-nA&cl=ffffff&w=a"></script>
+</div>
+
