@@ -26,6 +26,9 @@ project_links:
   - label: Paper
     url: https://arxiv.org/pdf/2604.17274
     icon: paper
+  - label: Instinct vs Reflection
+    url: https://github.com/Yunkaidang/Instinct-vs.-Reflection
+    icon: github
   - label: RL-MIND
     url: https://github.com/RL-MIND
     icon: github
@@ -74,14 +77,12 @@ project_links:
 
 ## Overview
 
-Multimodal Large Models can expose confidence through two different channels. The first is <span class="paper-key">instinct</span>: the probability distribution over answer tokens. The second is <span class="paper-key">reflection</span>: the model's explicit verbalized estimate of how confident it is. These two signals are often treated separately, even though both are available during multimodal inference and both can fail in different ways.
-
-In this paper, <span class="paper-key">we study how to unify token confidence and verbalized confidence for better MLLM reliability estimation</span>. Instead of relying on self-consistency aggregation, prompt-only strategies, or a single confidence source, the method extracts both channels and combines them with <span class="paper-key">monotone confidence fusion</span> so that the final score is better aligned with actual correctness.
+Multimodal Large Models can expose confidence through two different channels. The first is <span class="paper-key">instinct</span>: the probability distribution over answer tokens. The second is <span class="paper-key">reflection</span>: the model's explicit verbalized estimate of how confident it is. These two signals are often treated separately, even though both are available during multimodal inference and both can fail in different ways. In this paper, <span class="paper-key">we study how to unify token confidence and verbalized confidence for better MLLM reliability estimation</span>. Instead of relying on self-consistency aggregation, prompt-only strategies, or a single confidence source, the method extracts both channels and combines them with <span class="paper-key">monotone confidence fusion</span> so that the final score is better aligned with actual correctness.
 
 <div class="project-grid project-grid-1">
   <div class="project-media" style="--project-image-max-width: 640px;">
     <img src="/assets/img/publication_preview/Confidence/Motivation.png" alt="Motivation for dual-channel confidence evaluation">
-    <p class="project-caption"><span class="paper-key">Motivation.</span> Prior confidence estimation strategies are sensitive to sampling, aggregation, and prompting choices. The proposed framework uses both token-level probabilities and verbalized self-assessment signals, then calibrates them through monotone fusion.</p>
+    <p class="project-caption"><span class="paper-key">Motivation.</span> Prior confidence estimation strategies are sensitive to sampling, aggregation, and prompting choices. The proposed framework uses <span class="paper-key">both token-level probabilities and verbalized self-assessment signals</span>, then calibrates them through monotone fusion.</p>
   </div>
 </div>
 

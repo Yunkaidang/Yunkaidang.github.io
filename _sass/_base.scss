@@ -995,6 +995,22 @@ footer.sticky-bottom {
     transform: none;
   }
 
+  .paper-page-views {
+    background: rgba(118, 185, 0, 0.1);
+    border-color: rgba(118, 185, 0, 0.26);
+    box-shadow: none;
+    color: var(--paper-accent);
+    cursor: default;
+  }
+
+  .paper-page-views:hover {
+    background: rgba(118, 185, 0, 0.1);
+    border-color: rgba(118, 185, 0, 0.26);
+    box-shadow: none;
+    color: var(--paper-accent);
+    transform: none;
+  }
+
   .paper-btn.ghost {
     background: #ffffff;
     border-color: rgba(118, 185, 0, 0.28);
@@ -1229,6 +1245,12 @@ html[data-theme='dark'] .paper-page {
     background: rgba(246, 172, 102, 0.16);
     border-color: rgba(246, 172, 102, 0.3);
     color: #ffd5ad;
+  }
+
+  .paper-page-views {
+    background: rgba(143, 206, 31, 0.12);
+    border-color: rgba(143, 206, 31, 0.28);
+    color: #c8f08a;
   }
 
   .paper-bibtex {

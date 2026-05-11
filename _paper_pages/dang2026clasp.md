@@ -90,7 +90,7 @@ The core idea is that visual token pruning should be conditioned on the <span cl
 
 <div class="project-grid project-grid-1">
   <div class="project-media" style="--project-image-max-width: 820px;">
-    <img src="/assets/img/publication_preview/CLASP/performance.png" alt="Per-benchmark performance under increasing token pruning">
+    <img src="/assets/img/publication_preview/CLASP.png" alt="Per-benchmark performance under increasing token pruning">
     <p class="project-caption"><span class="paper-key">Performance Under Pruning.</span> Across eight evaluation suites, CLASP degrades more slowly than representative pruning baselines and stays closer to the unpruned upper bound, especially under aggressive pruning ratios.</p>
   </div>
 </div>

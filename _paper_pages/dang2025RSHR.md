@@ -1,6 +1,6 @@
 ---
-paper_key: dang2025uhrrs-mllm-benchmark
-bibtex_display_key: dang2025uhrrsbench
+paper_key: dang2025RSHR
+bibtex_display_key: dang2025RSHR
 hero_venue: arXiv 2025
 hero_authors_html: >-
   Yunkai Dang<sup>*</sup>, Meiyi Zhu<sup>*</sup>, Donghao Wang,
@@ -85,6 +85,17 @@ RSHR-Bench contains <span class="paper-metric">5,329</span> full-scene remote se
     <p class="project-caption">RSHR-Bench is designed to evaluate visual understanding on genuinely large remote sensing scenes rather than low-resolution shortcuts.</p>
 </div>
 
+<div class="project-grid project-grid-2">
+  <div class="project-media" style="--project-image-max-width: 430px;">
+    <img src="/assets/img/publication_preview/RSHR/motivation.png" alt="RSHR-Bench motivation">
+    <p class="project-caption"><span class="paper-key">Motivation.</span> Existing remote-sensing MLLM benchmarks can still allow answers driven by language priors, making stricter high-resolution visual grounding necessary.</p>
+  </div>
+  <div class="project-media" style="--project-image-max-width: 430px;">
+    <img src="/assets/img/publication_preview/RSHR/difference.png" alt="RSHR-Bench comparison with existing benchmarks">
+    <p class="project-caption"><span class="paper-key">Benchmark Difference.</span> RSHR-Bench emphasizes full-scene ultra-high-resolution imagery, richer interactions, and stronger filtering against shortcut reasoning.</p>
+  </div>
+</div>
+
 <p><i class="fas fa-shield-alt paper-inline-icon"></i><span class="paper-key">Language-Prior Resistance:</span> RSHR-Bench is explicitly designed to reduce shortcut answers that strong text-only models can exploit without seeing the image.</p>
 
 <p><i class="fas fa-image paper-inline-icon"></i><span class="paper-key">Ultra-High-Resolution Scale:</span> the benchmark contains <span class="paper-metric">5,329</span> full-scene images, with long sides of at least <span class="paper-metric">4,000</span> pixels and scenes reaching roughly <span class="paper-metric">3 × 10^8</span> pixels.</p>
@@ -101,6 +112,13 @@ RSHR-Bench contains <span class="paper-metric">5,329</span> full-scene remote se
 </div>
 
 ## Main Empirical Findings
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 880px;">
+    <img src="/assets/img/publication_preview/RSHR/experiment.png" alt="RSHR-Bench experimental results">
+    <p class="project-caption"><span class="paper-key">Experimental Results.</span> The benchmark exposes clear gaps between text-prior behavior and grounded visual reasoning, especially on ultra-high-resolution remote-sensing tasks.</p>
+  </div>
+</div>
 
 - On the remote-sensing subset of MME-RealWorld, a text-only Llama3-8B model still answers <span class="paper-metric">31.22%</span> of the questions correctly after the image is removed. This directly shows that some existing tasks remain solvable through priors rather than vision.
 - On XLRS-Bench, the issue becomes even more obvious: text-only Qwen3-8B reaches <span class="paper-metric">51.6%</span> average reasoning accuracy, surpassing the image-conditioned GPT-4o baseline at <span class="paper-metric">45.2%</span>. The same text-only model reaches <span class="paper-metric">72.0%</span> on anomaly detection and <span class="paper-metric">77.0%</span> on existence-and-counting reasoning, while text-only Llama3-8B achieves <span class="paper-metric">48.0%</span> on route planning.
