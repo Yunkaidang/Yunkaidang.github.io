@@ -10,13 +10,23 @@
   </head>
 
   <!-- Body -->
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+  {% assign is_bibliography_page = false %}
+  {% if page.url contains '/bibliography/' %}
+    {% assign is_bibliography_page = true %}
+  {% endif %}
+  <body class="{% if site.navbar_fixed and is_bibliography_page == false %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
 
     <!-- Header -->
-    {%- include header.html %}
+    {% unless is_bibliography_page %}
+      {%- include header.html %}
+    {% endunless %}
 
     <!-- Content -->
-    <div class="container mt-5">
+    {% assign content_container_class = 'container mt-5' %}
+    {% if page.url contains '/bibliography/' %}
+      {% assign content_container_class = content_container_class | append: ' container-bibliography' %}
+    {% endif %}
+    <div class="{{ content_container_class }}">
       {{ content }}
     </div>
 
@@ -31,6 +41,8 @@
     {% include scripts/badges.html %}
     {% include scripts/mathjax.html %}
     {% include scripts/analytics.html %}
-    {% include scripts/progressBar.html %}
+    {% unless is_bibliography_page %}
+      {% include scripts/progressBar.html %}
+    {% endunless %}
   </body>
 </html>

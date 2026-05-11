@@ -2,3 +2,10 @@
           <div class="publications">
             {% bibliography -f papers %}
           </div>
+          <script>
+            document.addEventListener('DOMContentLoaded', function () {
+              document.querySelectorAll('.publications .details').forEach(function (node) {
+                node.remove();
+              });
+            });
+          </script>

@@ -1,0 +1,263 @@
+---
+layout: default
+---
+{% assign venue = page.entry.journal | default: page.entry.booktitle | default: page.entry.school %}
+{% assign raw_authors = page.entry.author | default: '' | replace: ' and ', ' | ' %}
+{% assign author_list = raw_authors | split: ' | ' %}
+{% assign paper_key = page.entry.key | default: page.key %}
+{% assign custom_page = site.paper_pages | where: "paper_key", paper_key | first %}
+{% if custom_page == nil %}
+  {% for candidate_page in site.paper_pages %}
+    {% assign candidate_path = candidate_page.path | split: '/' | last | split: '.' | first %}
+    {% if candidate_path == paper_key %}
+      {% assign custom_page = candidate_page %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+{% assign custom_links = custom_page.project_links | default: empty %}
+{% assign custom_affiliations = custom_page.hero_affiliations | default: empty %}
+{% assign custom_highlights = custom_page.hero_highlights | default: empty %}
+{% assign custom_venue = custom_page.hero_venue %}
+{% assign custom_authors_html = custom_page.hero_authors_html %}
+{% assign custom_author_note = custom_page.hero_author_note %}
+{% assign bibtex_display_key = custom_page.bibtex_display_key | default: paper_key %}
+{% assign show_auto_preview = true %}
+{% assign show_auto_abstract = true %}
+{% assign show_auto_bibtex = true %}
+{% if custom_page %}
+  {% assign show_auto_preview = custom_page.show_auto_preview | default: false %}
+  {% assign show_auto_abstract = custom_page.show_auto_abstract | default: false %}
+  {% assign show_auto_bibtex = custom_page.show_auto_bibtex | default: false %}
+{% endif %}
+{% assign hf_logo_url = 'https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg' %}
+
+<div class="paper-page">
+  <section class="paper-hero">
+    <p class="paper-kicker">Project Page</p>
+    <h1 class="paper-title">{{ page.entry.title }}</h1>
+
+    {% if custom_authors_html %}
+      <p class="paper-authors">{{ custom_authors_html }}</p>
+    {% elsif author_list.size > 0 and author_list[0] != "" %}
+      <p class="paper-authors">
+        {% for author in author_list %}
+          {% assign author_item = author | strip %}
+          {% if author_item contains ',' %}
+            {% assign author_parts = author_item | split: ',' %}
+            {% assign author_first = author_parts[1] | strip %}
+            {% assign author_last = author_parts[0] | strip %}
+            {% assign formatted_author = author_first | append: ' ' | append: author_last | strip %}
+          {% else %}
+            {% assign formatted_author = author_item %}
+          {% endif %}
+          {{ formatted_author }}{% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    {% if custom_author_note %}
+      <p class="paper-author-note">{{ custom_author_note }}</p>
+    {% endif %}
+
+    {% if custom_affiliations.size > 0 %}
+      <div class="paper-affiliations">
+        {% for affiliation in custom_affiliations %}
+          {% capture affiliation_logo %}
+            {% if affiliation.logo %}
+              {% if affiliation.logo contains '://' %}
+                {{ affiliation.logo }}
+              {% else %}
+                {{ affiliation.logo | relative_url }}
+              {% endif %}
+            {% endif %}
+          {% endcapture %}
+          {% if affiliation.url %}
+            <a href="{{ affiliation.url }}" class="paper-affiliation" target="_blank" rel="noopener noreferrer">
+              {% if affiliation.logo %}
+                <img src="{{ affiliation_logo | strip }}" alt="{{ affiliation.name }} logo" class="paper-affiliation-logo">
+              {% endif %}
+              {% unless affiliation.show_name == false %}
+                <span class="paper-affiliation-name">{{ affiliation.name }}</span>
+              {% endunless %}
+            </a>
+          {% else %}
+            <span class="paper-affiliation">
+              {% if affiliation.logo %}
+                <img src="{{ affiliation_logo | strip }}" alt="{{ affiliation.name }} logo" class="paper-affiliation-logo">
+              {% endif %}
+              {% unless affiliation.show_name == false %}
+                <span class="paper-affiliation-name">{{ affiliation.name }}</span>
+              {% endunless %}
+            </span>
+          {% endif %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <p class="paper-venue">
+      {% if custom_venue %}
+        {{ custom_venue }}
+      {% else %}
+        {% if venue %}{{ venue }}{% endif %}
+        {% if venue and page.entry.year %} · {% endif %}
+        {% if page.entry.year %}{{ page.entry.year }}{% endif %}
+      {% endif %}
+    </p>
+
+    {% if custom_highlights.size > 0 %}
+      <div class="paper-highlight-grid">
+        {% for highlight in custom_highlights %}
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              {% if highlight.image %}
+                {% if highlight.image contains '://' %}
+                  <img src="{{ highlight.image }}" alt="{{ highlight.title }}">
+                {% else %}
+                  <img src="{{ highlight.image | relative_url }}" alt="{{ highlight.title }}">
+                {% endif %}
+              {% else %}
+                <i class="fas fa-{{ highlight.icon | default: 'star' }}" aria-hidden="true"></i>
+              {% endif %}
+            </div>
+            <h3>{{ highlight.title }}</h3>
+            <p>{{ highlight.text }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="paper-actions">
+      {% if custom_links.size > 0 %}
+        {% for link in custom_links %}
+          {% assign link_icon = link.icon | default: 'paper' %}
+          {% assign link_classes = 'paper-btn paper-btn-resource' %}
+          {% if link.disabled %}
+            {% assign link_classes = link_classes | append: ' disabled' %}
+          {% endif %}
+          {% capture link_icon_markup %}
+            {% case link_icon %}
+              {% when 'paper' %}
+                <i class="fas fa-file-lines" aria-hidden="true"></i>
+              {% when 'github' %}
+                <i class="fab fa-github" aria-hidden="true"></i>
+              {% when 'website' %}
+                <i class="fas fa-globe-americas" aria-hidden="true"></i>
+              {% when 'benchmark' %}
+                <i class="fas fa-chart-column" aria-hidden="true"></i>
+              {% when 'demo' %}
+                <i class="fas fa-play-circle" aria-hidden="true"></i>
+              {% when 'huggingface' %}
+                <img src="{{ hf_logo_url }}" alt="Hugging Face logo" class="paper-btn-logo">
+              {% else %}
+                <i class="fas fa-link" aria-hidden="true"></i>
+            {% endcase %}
+          {% endcapture %}
+          {% if link.disabled %}
+            <span class="{{ link_classes }}">
+              <span class="paper-btn-icon">{{ link_icon_markup | strip }}</span>
+              <span class="paper-btn-label">{{ link.label }}</span>
+            </span>
+          {% else %}
+            <a href="{{ link.url }}" class="{{ link_classes }}">
+              <span class="paper-btn-icon">{{ link_icon_markup | strip }}</span>
+              <span class="paper-btn-label">{{ link.label }}</span>
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {% if page.entry.pdf %}
+          {% if page.entry.pdf contains '://' %}
+            <a href="{{ page.entry.pdf }}" class="paper-btn paper-btn-resource">
+              <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Paper</span>
+            </a>
+          {% else %}
+            <a href="{{ page.entry.pdf | prepend: '/assets/pdf/' | relative_url }}" class="paper-btn paper-btn-resource">
+              <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Paper</span>
+            </a>
+          {% endif %}
+        {% elsif page.entry.arxiv %}
+          <a href="http://arxiv.org/abs/{{ page.entry.arxiv }}" class="paper-btn paper-btn-resource">
+            <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+            <span class="paper-btn-label">Paper</span>
+          </a>
+        {% endif %}
+        {% if page.entry.code %}
+          <a href="{{ page.entry.code }}" class="paper-btn paper-btn-resource">
+            <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+            <span class="paper-btn-label">Code</span>
+          </a>
+        {% endif %}
+        {% if page.entry.website %}
+          <a href="{{ page.entry.website }}" class="paper-btn paper-btn-resource">
+            <span class="paper-btn-icon"><i class="fas fa-globe-americas" aria-hidden="true"></i></span>
+            <span class="paper-btn-label">Website</span>
+          </a>
+        {% endif %}
+      {% endif %}
+      <a href="{{ '/' | relative_url }}" class="paper-btn ghost">Personal Homepage</a>
+    </div>
+  </section>
+
+  {% if show_auto_preview and page.entry.preview %}
+    <section class="paper-visual">
+      {% if page.entry.preview contains '://' %}
+        <img src="{{ page.entry.preview }}" alt="{{ page.entry.title }}">
+      {% else %}
+        <img src="{{ page.entry.preview | prepend: '/assets/img/publication_preview/' | relative_url }}" alt="{{ page.entry.title }}">
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if custom_page %}
+    <section class="paper-section paper-custom-content">
+      {{ custom_page.content | markdownify }}
+    </section>
+  {% endif %}
+
+  {% if show_auto_abstract %}
+    <section class="paper-section">
+      <h2>Abstract</h2>
+      {% if page.entry.abstract %}
+        <p>{{ page.entry.abstract }}</p>
+      {% else %}
+        <p>Abstract is being organized and will be updated soon.</p>
+      {% endif %}
+      {% if page.entry.note %}
+        <p class="paper-note">{{ page.entry.note }}</p>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if show_auto_bibtex %}
+    <section class="paper-section">
+      <h2>BibTeX</h2>
+      {% if page.entry.bibtex %}
+        <pre class="paper-bibtex"><code>{{ page.entry.bibtex | hideCustomBibtex }}</code></pre>
+      {% else %}
+        <p>BibTeX will be added soon.</p>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  <section class="paper-section paper-citation-panel">
+    <div class="paper-section-heading">
+      <h2>BibTeX Citation</h2>
+    </div>
+    <div class="paper-citation-grid">
+      <article class="paper-citation-card paper-citation-card-full">
+        <h3>BibTeX</h3>
+        {% assign scholar_bibtex = paper_key | scholar_bibtex_from_key: bibtex_display_key %}
+        {% if scholar_bibtex != '' %}
+          <pre class="paper-bibtex"><code>{{ scholar_bibtex }}</code></pre>
+        {% elsif page.entry.bibtex %}
+          <pre class="paper-bibtex"><code>{{ page.entry.bibtex | hideCustomBibtex }}</code></pre>
+        {% else %}
+          <p>BibTeX will be added soon.</p>
+        {% endif %}
+      </article>
+    </div>
+  </section>
+</div>
