@@ -33,19 +33,15 @@ project_links:
   - label: UHR Code
     url: https://github.com/Yunkaidang/UHR
     icon: github
+  - label: Model
+    url: https://huggingface.co/FelixKAI/UHR-BAT
+    icon: huggingface
   - label: RL-MIND
     url: https://github.com/RL-MIND
     icon: github
   - label: RL-MIND
     url: https://huggingface.co/RL-MIND
     icon: huggingface
-  - label: Demo (Coming Soon)
-    icon: huggingface
-    disabled: true
-  - label: Model
-  - url: https://huggingface.co/FelixKAI/UHR-BAT
-    icon: huggingface
-    disabled: true
 ---
 
 <style>
