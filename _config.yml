@@ -171,6 +171,8 @@ collections:
   projects:
     output: true
     permalink: /projects/:path/
+  paper_pages:
+    output: false
 
 news:
   enabled: true
@@ -284,7 +286,7 @@ scholar:
 
   details_dir: bibliography
   details_layout: bibtex.html
-  details_link: Details
+  details_link:
 
   query: "@*"
 
