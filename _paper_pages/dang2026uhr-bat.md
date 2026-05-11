@@ -42,7 +42,8 @@ project_links:
   - label: Demo (Coming Soon)
     icon: huggingface
     disabled: true
-  - label: Weights (Coming Soon)
+  - label: Model
+  - url: https://huggingface.co/FelixKAI/UHR-BAT
     icon: huggingface
     disabled: true
 ---
