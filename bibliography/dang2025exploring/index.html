@@ -192,57 +192,110 @@
 .paper-page .paper-custom-content .project-grid { max-width: 980px; margin-left: auto; margin-right: auto; }
 .paper-page .paper-custom-content .project-media img { max-width: min(100%, var(--project-image-max-width, 100%)); width: min(100%, var(--project-image-width, 100%)); margin: 0 auto; }
 .paper-page .paper-custom-content .project-caption { font-size: 0.92rem; }
+.paper-inline-icon {
+  color: #6d5dd3;
+  font-size: 1.05rem;
+  margin-right: 0.45rem;
+}
+.paper-inline-logo {
+  height: 1.15rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.16rem;
+}
 </style>
 
 <h2 id="overview">Overview</h2>
 
-<p>This project studies a failure mode that many users notice in practice but few benchmarks isolate cleanly: an MLLM gives the correct answer first, then abandons it after receiving a misleading cue. The paper names this phenomenon <span class="paper-key">response uncertainty</span> and argues that standard accuracy metrics miss a large part of the problem because they do not measure how stable a correct answer remains under deceptive instructions.</p>
+<p>Multimodal large language models can answer visual questions correctly, but that does not always mean the answer is stable. This project studies a concrete failure mode: an MLLM gives the correct response on the original image-question pair, then abandons that answer after a misleading cue is inserted into the prompt.</p>
 
-<p>To study this systematically, the paper introduces a two-stage misleading-instruction pipeline and builds the <span class="paper-key">Multimodal Uncertainty Benchmark (MUB)</span>. The benchmark is designed to quantify how easily models are pushed away from previously correct answers by explicit false hints or implicit contradictory context.</p>
+<p>The paper calls this behavior <span class="paper-key">response uncertainty</span>. Instead of only measuring whether a model can solve a benchmark item once, the evaluation asks whether the model can <span class="paper-key">preserve an originally correct answer</span> when it is confronted with explicit false hints or implicit contextual contradictions.</p>
 
 <div class="project-grid project-grid-1">
-  <div class="project-media" style="--project-image-max-width: 860px;">
-    <img src="/assets/img/publication_preview/uncertainy.png" alt="Exploring response uncertainty overview">
-    <p class="project-caption">MUB measures how often a multimodal model reverses a previously correct answer after explicit or implicit misleading cues are introduced.</p>
+  <div class="project-media" style="--project-image-max-width: 620px;">
+    <img src="/assets/img/publication_preview/Uncertainty/Motivation.png" alt="Response uncertainty motivation">
+    <p class="project-caption"><span class="paper-key">Motivation.</span> The consistency histograms show that misleading-prone examples expose unstable responses, and that targeted fine-tuning improves consistency most strongly on high-misleading-rate data.</p>
   </div>
 </div>
 
-<p><i class="fas fa-exclamation-triangle paper-inline-icon"></i><span class="paper-key">Response Uncertainty:</span> the benchmark focuses on the specific case where a model already has the right answer but gives it up after being nudged by deceptive multimodal context.</p>
+<p><i class="fas fa-exclamation-triangle paper-inline-icon"></i><span class="paper-key">Response Uncertainty:</span> the benchmark focuses on correct-to-incorrect flips, where a model already has the right answer but gives it up after a misleading instruction.</p>
 
-<p><i class="fas fa-random paper-inline-icon"></i><span class="paper-key">Two-Stage Misleading Pipeline:</span> the procedure first tests the original prompt, then injects misleading information and measures whether the answer flips from correct to incorrect or vice versa.</p>
+<p><i class="fas fa-database paper-inline-icon"></i><span class="paper-key">Multimodal Uncertainty Benchmark:</span> MUB is curated from uncertainty-prone samples and stratified into low-, medium-, and high-difficulty groups according to how many strong MLLMs are misled.</p>
 
-<p><i class="fas fa-shield-alt paper-inline-icon"></i><span class="paper-key">Robustness Gains:</span> a compact mixed-instruction fine-tuning strategy reduces the explicit misleading rate to <span class="paper-metric">6.97%</span> and the implicit misleading rate to <span class="paper-metric">32.77%</span>.</p>
+<p><i class="fas fa-random paper-inline-icon"></i><span class="paper-key">Explicit and Implicit Misleading:</span> the evaluation covers direct false-answer hints as well as contextual contradictions that nudge the model toward a wrong answer less directly.</p>
+
+<p><i class="fas fa-shield-alt paper-inline-icon"></i><span class="paper-key">Robustness Gains:</span> a compact <span class="paper-metric">2,000</span>-sample mixed-instruction fine-tuning strategy sharply reduces misleading rates while slightly improving standard benchmark accuracy.</p>
 
 <div class="project-grid project-grid-2">
-  <div class="project-media" style="--project-image-max-width: 420px;">
-    <p><i class="fas fa-chart-line paper-inline-icon"></i><span class="paper-key">Benchmark Signal:</span> across nine datasets, open-source MLLMs overturn a previously correct answer in about <span class="paper-metric">65%</span> of cases after a single deceptive cue.</p>
+  <div class="project-media">
+    <p><i class="fas fa-chart-line paper-inline-icon"></i><span class="paper-key">Benchmark Signal:</span> across nine datasets, twelve open-source MLLMs overturn a previously correct answer in about <span class="paper-metric">65%</span> of cases after a single deceptive cue.</p>
   </div>
-  <div class="project-media" style="--project-image-max-width: 420px;">
+  <div class="project-media">
     <p><i class="fas fa-file-alt paper-inline-icon"></i><span class="paper-key">Paper Resource:</span> the full benchmark and analysis are available on <a href="https://arxiv.org/pdf/2411.02708" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv paper-inline-icon" style="margin-left:0.3rem;margin-right:0.3rem;"></i>arXiv</a>.</p>
   </div>
 </div>
 
-<p>This is not just a robustness stress test bolted onto existing VQA benchmarks. The paper is explicitly about whether a model can <span class="paper-key">hold onto a correct answer</span> once misleading instructions appear, which makes it a useful complement to standard accuracy tables.</p>
-
 <h2 id="method-pipeline">Method Pipeline</h2>
 
-<p>The procedure first queries a model on the original image-question pair. It then adds misleading information to create a second version of the prompt and measures whether the answer flips from correct to incorrect or vice versa. Using this framework, the authors curate a 2.5k-sample benchmark consisting of 1.7k multiple-choice questions and 0.8k true-or-false questions. MUB is further divided into low-, medium-, and high-difficulty groups according to how many strong MLLMs the example can mislead.</p>
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 980px;">
+    <img src="/assets/img/publication_preview/Uncertainty/Method.png" alt="MUB method overview">
+    <p class="project-caption"><span class="paper-key">Method Overview.</span> The pipeline first extracts misleading-prone examples from widely used multimodal benchmarks, builds the Multimodal Uncertainty Benchmark (MUB), evaluates open-source and closed-source MLLMs with explicit and implicit misleading instructions, and then fine-tunes open-source models with mixed-instruction data to reduce response uncertainty.</p>
+  </div>
+</div>
+
+<p>The evaluation starts by querying a model on the original image-question pair. After the initial response is obtained, the prompt is modified with a misleading instruction and the model is queried again. The key metric is the <span class="paper-key">misleading rate</span>, which measures how often an originally correct answer flips to an incorrect one.</p>
+
+<p>Using this protocol, the authors collect uncertainty-prone examples from nine widely used multimodal benchmarks, including <span class="paper-key">MME</span>, <span class="paper-key">SEED</span>, <span class="paper-key">MMBench</span>, <span class="paper-key">MMStar</span>, <span class="paper-key">MMMU</span>, <span class="paper-key">ScienceQA</span>, <span class="paper-key">AI2D</span>, <span class="paper-key">MathVista</span>, and <span class="paper-key">ConBench</span>. MUB contains <span class="paper-metric">2.5K</span> samples, including <span class="paper-metric">1.7K</span> multiple-choice questions and <span class="paper-metric">0.8K</span> true-or-false questions, and is grouped into low-, medium-, and high-difficulty splits.</p>
+
+<p>The paper then evaluates <span class="paper-metric">12</span> open-source and <span class="paper-metric">5</span> closed-source MLLMs under both explicit misleading instructions, such as a direct false-answer hint, and implicit misleading instructions, such as a contextual statement that contradicts the visual evidence.</p>
 
 <h2 id="main-experimental-results">Main Experimental Results</h2>
 
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 980px;">
+    <img src="/assets/img/publication_preview/Uncertainty/result1.png" alt="Misleading rate results across datasets and instruction types">
+    <p class="project-caption"><span class="paper-key">Dataset and Instruction Trends.</span> The radar plots summarize misleading rates across nine datasets, while the scatter plots compare explicit and implicit misleading behavior across different MLLMs and prompt variants.</p>
+  </div>
+</div>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 980px;">
+    <img src="/assets/img/publication_preview/Uncertainty/Experiment1.png" alt="MUB misleading rate comparison before fine-tuning">
+    <p class="project-caption"><span class="paper-key">MUB Evaluation Before Fine-Tuning.</span> Closed-source and open-source MLLMs show high misleading rates, especially on high-difficulty examples and implicit misleading instructions.</p>
+  </div>
+</div>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 980px;">
+    <img src="/assets/img/publication_preview/Uncertainty/Experiment2.png" alt="MUB misleading rate comparison after fine-tuning">
+    <p class="project-caption"><span class="paper-key">MUB Evaluation After Fine-Tuning.</span> Fine-tuning with a compact mixed-instruction dataset substantially lowers correct-to-incorrect misleading rates across model families and difficulty levels.</p>
+  </div>
+</div>
+
 <ul>
-  <li>Across nine standard datasets, the paper reports that state-of-the-art open-source MLLMs overturn a previously correct answer in about <span class="paper-metric">65%</span> of cases after receiving a single deceptive cue.</li>
-  <li>In the large-scale benchmark sweep, the average misleading rate for true-to-false transitions is about <span class="paper-metric">65.39%</span>, while the false-to-true transition rate is about <span class="paper-metric">83.35%</span>, showing that model responses are highly unstable under misleading supervision.</li>
-  <li>On MUB, the paper reports very high susceptibility overall: explicit misleading instructions exceed <span class="paper-metric">67.19%</span> misleading rate, implicit misleading instructions exceed <span class="paper-metric">80.67%</span>, and the selected uncertainty slices remain difficult across both open-source and closed-source model families.</li>
-  <li>A compact <span class="paper-metric">2,000</span>-sample mixed-instruction fine-tuning strategy dramatically improves robustness: the misleading rates drop to <span class="paper-metric">6.97%</span> for explicit cues and <span class="paper-metric">32.77%</span> for implicit cues, while consistency on highly deceptive inputs improves by nearly <span class="paper-metric">29.37%</span>.</li>
-  <li>The paper also reports slight accuracy gains on MUB and on additional benchmarks after robustness-oriented fine-tuning, which is important because it shows the defense is not simply trading away base capability.</li>
+  <li>Across nine standard datasets, the paper reports that twelve state-of-the-art open-source MLLMs overturn a previously correct answer in about <span class="paper-metric">65%</span> of cases after receiving a single deceptive cue.</li>
+  <li>On MUB, misleading rates increase with difficulty. Before fine-tuning, the average explicit misleading rate rises from <span class="paper-metric">45.85%</span> on low-difficulty samples to <span class="paper-metric">86.79%</span> on high-difficulty samples, while the average implicit misleading rate reaches <span class="paper-metric">87.68%</span> on high-difficulty samples.</li>
+  <li>Across the benchmark analysis, explicit misleading instructions exceed <span class="paper-metric">67.19%</span> misleading rate, while implicit misleading instructions exceed <span class="paper-metric">80.67%</span>, showing that subtle contradictions can be even more disruptive than direct false hints.</li>
+  <li>After robustness-oriented fine-tuning, the average explicit misleading rate drops to <span class="paper-metric">6.97%</span> and the average implicit misleading rate drops to <span class="paper-metric">32.77%</span>. On the tabled MUB splits, the post-tuning averages are <span class="paper-metric">4.8%</span>, <span class="paper-metric">8.7%</span>, and <span class="paper-metric">7.4%</span> for explicit low-, medium-, and high-difficulty samples.</li>
+  <li>The same fine-tuning recipe boosts consistency by nearly <span class="paper-metric">29.37%</span> on highly deceptive inputs and slightly improves standard benchmark accuracy, indicating that the mitigation does not simply trade away base capability.</li>
 </ul>
+
+<h2 id="qualitative-examples">Qualitative Examples</h2>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 900px;">
+    <img src="/assets/img/publication_preview/Uncertainty/Example1.png" alt="Explicit misleading examples from MUB">
+    <p class="project-caption"><span class="paper-key">Explicit Misleading Samples.</span> These examples show how a direct false hint can conflict with the visual evidence and pressure a model to abandon a correct answer.</p>
+  </div>
+</div>
+
+<p>The qualitative cases illustrate why this benchmark is different from ordinary accuracy evaluation. The question itself is still answerable from the image, but the instruction stream includes an adversarial cue. A reliable MLLM should be able to compare that cue against the visual evidence instead of treating the prompt as ground truth.</p>
 
 <h2 id="why-these-results-matter">Why These Results Matter</h2>
 
-<p>A high-accuracy model can still be unreliable if it is easy to push off course. This project turns that intuition into a measurable benchmark and gives the community a way to study uncertainty, susceptibility, and recovery under misleading conditions.</p>
+<p>A high-accuracy model can still be unreliable if it is easy to push off course. This project turns that concern into a measurable benchmark and gives the community a way to study uncertainty, susceptibility, and recovery under misleading conditions.</p>
 
-<p>That matters for trustworthy multimodal systems, especially in scenarios where the prompt source may be noisy, adversarial, or simply wrong. MUB and the accompanying analysis make it easier to compare models not only by what they know, but by how firmly they can hold onto a correct answer.</p>
+<p>That matters for trustworthy multimodal systems, especially in settings where the prompt source may be noisy, adversarial, or simply wrong. MUB and the accompanying analysis make it easier to compare models not only by what they know, but by how firmly they can hold onto a correct answer when misleading information appears.</p>
 
     </section>
   
