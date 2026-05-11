@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>A Benchmark for Ultra-High-Resolution Remote Sensing MLLMs | Yunkai Dang</title>
+    <meta name="author" content="Yunkai  Dang">
+    <meta name="description" content="Yunkai Dang is with Nanjing University. Research interests include Few-Shot Learning and MLLMs.
+">
+    <meta name="keywords" content="few-shot learning, MLLMs, multimodal LLMs, computer vision, machine learning">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Source+Serif+4:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://yunkaidang.github.io/bibliography/dang2025uhrrs-mllm-benchmark/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  
+  
+  <body class=" ">
+
+    <!-- Header -->
+    
+
+    <!-- Content -->
+    
+    
+    <div class="container mt-5 container-bibliography">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="paper-page">
+  <section class="paper-hero">
+    <p class="paper-kicker">Project Page</p>
+    <h1 class="paper-title">A Benchmark for Ultra-High-Resolution Remote Sensing MLLMs</h1>
+
+    
+      <p class="paper-authors">Yunkai Dang<sup>*</sup>, Meiyi Zhu<sup>*</sup>, Donghao Wang, Yizhuo Zhang, Jiacheng Yang, Qi Fan, Yuekun Yang, Wenbin Li<sup>†</sup>, Feng Miao, Yang Gao</p>
+    
+
+    
+      <p class="paper-author-note"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author. Correspondence to: yunkaidang@smail.nju.edu.cn, liwenbin@nju.edu.cn.</p>
+    
+
+    
+      <div class="paper-affiliations">
+        
+          
+          
+            <span class="paper-affiliation">
+              
+                <img src="/assets/img/icons/rlmind.png" alt="Reasoning and Learning Research Group logo" class="paper-affiliation-logo">
+              
+              
+            </span>
+          
+        
+          
+          
+            <a href="https://www.nju.edu.cn/en/" class="paper-affiliation" target="_blank" rel="noopener noreferrer">
+              
+                <img src="/assets/img/icons/nju.png" alt="Nanjing University logo" class="paper-affiliation-logo">
+              
+              
+            </a>
+          
+        
+      </div>
+    
+
+    <p class="paper-venue">
+      
+        arXiv 2025
+      
+    </p>
+
+    
+      <div class="paper-highlight-grid">
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-image" aria-hidden="true"></i>
+              
+            </div>
+            <h3>5,329 Ultra-High-Resolution Scenes</h3>
+            <p>RSHR-Bench is built from full-scene remote sensing images with long sides of at least 4,000 pixels and much stricter visual requirements.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Language-Prior Resistant Evaluation</h3>
+            <p>The benchmark uses adversarial filtering and human verification to reduce shortcut answers that strong text-only LLMs can exploit.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-comments" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Perception, Reasoning, and Multi-Turn</h3>
+            <p>It evaluates not only single-turn VQA but also captioning, open-ended reasoning, and multi-turn interaction in super-high-resolution settings.</p>
+          </article>
+        
+      </div>
+    
+
+    <div class="paper-actions">
+      
+        
+          
+          
+          
+          
+          
+            <a href="https://arxiv.org/pdf/2512.17319" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Paper</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://github.com/Yunkaidang/RSHR" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fas fa-chart-column" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">RSHR Benchmark</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://github.com/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://huggingface.co/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face logo" class="paper-btn-logo"></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+      
+      <a href="/" class="paper-btn ghost">Personal Homepage</a>
+    </div>
+  </section>
+
+  
+
+  
+    <section class="paper-section paper-custom-content">
+      <style>
+/* Edit these values directly in this Markdown file. */
+.paper-page .paper-title { font-size: 2rem; }
+.paper-page .paper-authors { font-size: 1.5rem; }
+.paper-page .paper-venue { font-size: 1.42rem; }
+.paper-page .paper-affiliation-logo { height: 3.5rem; }
+.paper-page .paper-highlight-icon { width: 3.25rem; height: 3.25rem; }
+.paper-page .paper-highlight-icon img { height: 1.85rem; }
+.paper-page .paper-visual,
+.paper-page .paper-section { max-width: 1080px; }
+.paper-page .paper-visual { --paper-hero-image-max-width: 980px; }
+.paper-page .paper-visual img { max-width: min(100%, var(--paper-hero-image-max-width, 980px)); margin: 0 auto; width: 100%; }
+.paper-page .paper-custom-content {
+  --project-grid-gap: 1rem;
+  --project-media-max-width: 100%;
+  --project-image-width: 100%;
+  --project-image-max-width: 100%;
+  font-size: 1.05rem;
+}
+.paper-page .paper-custom-content h2 { font-size: 1.8rem; }
+.paper-page .paper-custom-content h3 { font-size: 1.3rem; }
+.paper-page .paper-custom-content p,
+.paper-page .paper-custom-content li { font-size: 1.05rem; line-height: 1.8; }
+.paper-page .paper-custom-content .project-grid { max-width: 980px; margin-left: auto; margin-right: auto; }
+.paper-page .paper-custom-content .project-media img { max-width: min(100%, var(--project-image-max-width, 100%)); width: min(100%, var(--project-image-width, 100%)); margin: 0 auto; }
+.paper-page .paper-custom-content .project-caption { font-size: 0.92rem; }
+</style>
+
+<h2 id="project-overview">Project Overview</h2>
+
+<p><span class="paper-key">RSHR-Bench</span> is built around a direct critique of current remote sensing multimodal evaluation: many benchmarks appear to test visual reasoning, but in practice a strong text-only LLM can sometimes answer a large fraction of the questions without seeing the image at all. That means benchmark scores can exaggerate visual understanding and understate the role of <span class="paper-key">language priors</span>.</p>
+
+<p>The paper introduces a new benchmark for <span class="paper-key">ultra-high-resolution remote sensing MLLMs</span> where the images are large, the tasks are more interaction-heavy, and the annotation pipeline explicitly tries to reduce answer shortcuts. The benchmark is designed to test whether a model can connect high-resolution visual evidence to perception, reasoning, and multi-turn interaction.</p>
+
+<h2 id="benchmark-design">Benchmark Design</h2>
+
+<p>RSHR-Bench contains <span class="paper-metric">5,329</span> full-scene remote sensing images with a long side of at least <span class="paper-metric">4,000 pixels</span>, with some scenes reaching roughly <span class="paper-metric">3 × 10^8</span> pixels. It includes <span class="paper-metric">3,864</span> VQA tasks, <span class="paper-metric">3,913</span> image captioning tasks, and <span class="paper-metric">500</span> fully human-written or human-verified single-image evaluation pairs. The benchmark spans multiple-choice VQA, open-ended VQA, image captioning, and single-image evaluation, and covers <span class="paper-key">nine perception categories</span> together with <span class="paper-key">four reasoning types</span>.</p>
+
+<div class="project-media" style="--project-image-max-width: 860px;">
+    <img src="/assets/img/publication_preview/RSHR.png" alt="RSHR benchmark overview">
+    <p class="project-caption">RSHR-Bench is designed to evaluate visual understanding on genuinely large remote sensing scenes rather than low-resolution shortcuts.</p>
+</div>
+
+<p><i class="fas fa-shield-alt paper-inline-icon"></i><span class="paper-key">Language-Prior Resistance:</span> RSHR-Bench is explicitly designed to reduce shortcut answers that strong text-only models can exploit without seeing the image.</p>
+
+<p><i class="fas fa-image paper-inline-icon"></i><span class="paper-key">Ultra-High-Resolution Scale:</span> the benchmark contains <span class="paper-metric">5,329</span> full-scene images, with long sides of at least <span class="paper-metric">4,000</span> pixels and scenes reaching roughly <span class="paper-metric">3 × 10^8</span> pixels.</p>
+
+<p><i class="fas fa-comments paper-inline-icon"></i><span class="paper-key">Task Diversity:</span> it evaluates multiple-choice VQA, open-ended VQA, captioning, and single-image evaluation across perception, reasoning, and multi-turn interaction.</p>
+
+<div class="project-grid project-grid-2">
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-brain paper-inline-icon"></i><span class="paper-key">Key Finding:</span> text-only models can still reach <span class="paper-metric">51.6%</span> reasoning accuracy on XLRS-Bench, showing why stricter visual evaluation is necessary.</p>
+  </div>
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-file-alt paper-inline-icon"></i><span class="paper-key">Paper Resource:</span> the benchmark design and evaluation details are available on <a href="https://arxiv.org/pdf/2512.17319" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv paper-inline-icon" style="margin-left:0.3rem;margin-right:0.3rem;"></i>arXiv</a>.</p>
+  </div>
+</div>
+
+<h2 id="main-empirical-findings">Main Empirical Findings</h2>
+
+<ul>
+  <li>On the remote-sensing subset of MME-RealWorld, a text-only Llama3-8B model still answers <span class="paper-metric">31.22%</span> of the questions correctly after the image is removed. This directly shows that some existing tasks remain solvable through priors rather than vision.</li>
+  <li>On XLRS-Bench, the issue becomes even more obvious: text-only Qwen3-8B reaches <span class="paper-metric">51.6%</span> average reasoning accuracy, surpassing the image-conditioned GPT-4o baseline at <span class="paper-metric">45.2%</span>. The same text-only model reaches <span class="paper-metric">72.0%</span> on anomaly detection and <span class="paper-metric">77.0%</span> on existence-and-counting reasoning, while text-only Llama3-8B achieves <span class="paper-metric">48.0%</span> on route planning.</li>
+  <li>On RSHR-Bench itself, the paper reports that open-source models mostly remain around <span class="paper-metric">25%</span> accuracy on reasoning, indicating that the new benchmark is substantially more demanding than many earlier datasets. Among open-source systems, VILA-HD is highlighted as notably stronger on reasoning, reaching an average of <span class="paper-metric">58.0</span> in the reported setting.</li>
+  <li>Captioning performance remains low even for strong closed-source models. For example, GPT-4o-mini achieves the best overall caption metrics in the main comparison, but the reported BLEU-4 is still only <span class="paper-metric">4.8</span>. This is a useful signal that the benchmark is not easy to game with generic language fluency alone.</li>
+</ul>
+
+<h2 id="why-this-benchmark-matters">Why This Benchmark Matters</h2>
+
+<p>A useful benchmark should measure the capability we care about, not just the ability to exploit annotation artifacts. <span class="paper-key">RSHR-Bench</span> matters because it makes that distinction explicit. It is <span class="paper-key">large enough, high-resolution enough, and carefully filtered enough</span> to expose whether a model is actually using the image.</p>
+
+<p>For future remote sensing MLLMs, this benchmark is valuable both as an evaluation tool and as a design pressure. It favors models that can preserve fine-grained visual grounding over long contexts and discourages systems that rely too heavily on language priors.</p>
+
+    </section>
+  
+
+  
+
+  
+
+  <section class="paper-section paper-citation-panel">
+    <div class="paper-section-heading">
+      <h2>BibTeX Citation</h2>
+    </div>
+    <div class="paper-citation-grid">
+      <article class="paper-citation-card paper-citation-card-full">
+        <h3>BibTeX</h3>
+        
+        
+          <pre class="paper-bibtex"><code>@article{dang2025uhrrsbench,
+  title={A Benchmark for Ultra-High-Resolution Remote Sensing MLLMs},
+  author={Dang, Yunkai and Zhu, Meiyi and Wang, Donghao and Zhang, Yizhuo and Yang, Jiacheng and Fan, Qi and Yang, Yuekun and Li, Wenbin and Miao, Feng and Gao, Yang},
+  journal={arXiv preprint arXiv:2512.17319},
+  year={2025}
+}</code></pre>
+        
+      </article>
+    </div>
+  </section>
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2026 Yunkai  Dang. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+  </body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>UHR-BAT: Budget-Aware Token Compression Vision-Language model for Ultra-High-Resolution Remote Sensing | Yunkai Dang</title>
+    <meta name="author" content="Yunkai  Dang">
+    <meta name="description" content="Yunkai Dang is with Nanjing University. Research interests include Few-Shot Learning and MLLMs.
+">
+    <meta name="keywords" content="few-shot learning, MLLMs, multimodal LLMs, computer vision, machine learning">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Source+Serif+4:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://yunkaidang.github.io/bibliography/dang2026uhr-bat/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  
+  
+  <body class=" ">
+
+    <!-- Header -->
+    
+
+    <!-- Content -->
+    
+    
+    <div class="container mt-5 container-bibliography">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="paper-page">
+  <section class="paper-hero">
+    <p class="paper-kicker">Project Page</p>
+    <h1 class="paper-title">UHR-BAT: Budget-Aware Token Compression Vision-Language model for Ultra-High-Resolution Remote Sensing</h1>
+
+    
+      <p class="paper-authors">Yunkai Dang<sup>*</sup>, Minxin Dai<sup>*</sup>, Yuekun Yang, Zhangnan Li, Wenbin Li<sup>†</sup>, Feng Miao, Yang Gao</p>
+    
+
+    
+      <p class="paper-author-note"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author. Correspondence to: liwenbin.nju@gmail.com, yunkaidang1@gmail.com.</p>
+    
+
+    
+      <div class="paper-affiliations">
+        
+          
+          
+            <span class="paper-affiliation">
+              
+                <img src="/assets/img/icons/rlmind.png" alt="Reasoning and Learning Research Group logo" class="paper-affiliation-logo">
+              
+              
+            </span>
+          
+        
+          
+          
+            <a href="https://www.nju.edu.cn/en/" class="paper-affiliation" target="_blank" rel="noopener noreferrer">
+              
+                <img src="/assets/img/icons/nju.png" alt="Nanjing University logo" class="paper-affiliation-logo">
+              
+              
+            </a>
+          
+        
+      </div>
+    
+
+    <p class="paper-venue">
+      
+        ICML 2026
+      
+    </p>
+
+    
+      <div class="paper-highlight-grid">
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-crosshairs" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Query-Guided Token Compression</h3>
+            <p>UHR-BAT allocates the visual token budget according to the current instruction so that small but decisive evidence is preserved.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-layer-group" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Region-Faithful Preserve and Merge</h3>
+            <p>The framework keeps informative regional tokens and merges redundant ones, reducing cost without destroying spatial structure.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-chart-line" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Strong UHR Remote Sensing Results</h3>
+            <p>The model reports 44.0 weighted average on XLRS-Bench and strong gains on MMERealworld-RS and RSHR-Bench.</p>
+          </article>
+        
+      </div>
+    
+
+    <div class="paper-actions">
+      
+        
+          
+          
+          
+          
+          
+            <a href="https://arxiv.org/pdf/2604.13565" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Paper</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://github.com/Yunkaidang/UHR" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">UHR Code</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://github.com/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://huggingface.co/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face logo" class="paper-btn-logo"></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <span class="paper-btn paper-btn-resource disabled">
+              <span class="paper-btn-icon"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face logo" class="paper-btn-logo"></span>
+              <span class="paper-btn-label">Demo (Coming Soon)</span>
+            </span>
+          
+        
+          
+          
+          
+          
+          
+            <span class="paper-btn paper-btn-resource disabled">
+              <span class="paper-btn-icon"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face logo" class="paper-btn-logo"></span>
+              <span class="paper-btn-label">Weights (Coming Soon)</span>
+            </span>
+          
+        
+      
+      <a href="/" class="paper-btn ghost">Personal Homepage</a>
+    </div>
+  </section>
+
+  
+
+  
+    <section class="paper-section paper-custom-content">
+      <style>
+/* Edit these values directly in this Markdown file. */
+.paper-page .paper-title { font-size: 2rem; }
+.paper-page .paper-authors { font-size: 1.5rem; }
+.paper-page .paper-venue { font-size: 1.42rem; }
+.paper-page .paper-affiliation-logo { height: 3.5rem; }
+.paper-page .paper-highlight-icon { width: 3.25rem; height: 3.25rem; }
+.paper-page .paper-highlight-icon img { height: 1.85rem; }
+.paper-page .paper-visual,
+.paper-page .paper-section { max-width: 1080px; }
+.paper-page .paper-visual { --paper-hero-image-max-width: 980px; }
+.paper-page .paper-visual img { max-width: min(100%, var(--paper-hero-image-max-width, 980px)); margin: 0 auto; width: 100%; }
+.paper-page .paper-custom-content {
+  --project-grid-gap: 1rem;
+  --project-media-max-width: 100%;
+  --project-image-width: 100%;
+  --project-image-max-width: 100%;
+  font-size: 1.05rem;
+}
+.paper-page .paper-custom-content h2 { font-size: 1.8rem; }
+.paper-page .paper-custom-content h3 { font-size: 1.3rem; }
+.paper-page .paper-custom-content p,
+.paper-page .paper-custom-content li { font-size: 1.05rem; line-height: 1.8; }
+.paper-page .paper-custom-content .project-grid { max-width: 980px; margin-left: auto; margin-right: auto; }
+.paper-page .paper-custom-content .project-media img { max-width: min(100%, var(--project-image-max-width, 100%)); width: min(100%, var(--project-image-width, 100%)); margin: 0 auto; }
+.paper-page .paper-custom-content .project-caption { font-size: 0.92rem; }
+.paper-inline-icon {
+  color: #76b900;
+  font-size: 1.05rem;
+  margin-right: 0.45rem;
+}
+.paper-inline-logo {
+  height: 1.15rem;
+  margin-right: 0.4rem;
+  vertical-align: -0.16rem;
+}
+</style>
+
+<h2 id="overview">Overview</h2>
+
+<p>Ultra-high-resolution (UHR) remote sensing imagery couples kilometer-scale context with query-critical evidence that may occupy only a few pixels. Such vast spatial scale leads to a quadratic explosion of visual tokens and hinders the extraction of information from small objects. Previous works utilize direct downsampling, dense tiling, or global top-k pruning, which either compromise query-critical image details or incur unpredictable compute. In this paper, <span class="paper-key">we propose UHR-BAT, a query-guided and region-faithful token compression framework to efficiently select visual tokens under a strict context budget.e</span> Specifically, we leverage text-guided, multi-scale importance estimation for visual tokens, effectively tackling the challenge of achieving precise yet low-cost feature extraction. Furthermore, by introducing region-wise preserve and merge strategies, we mitigate visual token redundancy, further driving down the computational budget. Experimental results show that UHR-BAT achieves state-of-the-art performance across various benchmarks. Code will be available at this https URL.</p>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 480px;">
+    <img src="/assets/img/publication_preview/UHR_BAT.png" alt="UHR-BAT overview">
+    <p class="project-caption">UHR-BAT keeps query-relevant evidence while aggressively compressing redundant visual tokens in ultra-high-resolution scenes.</p>
+  </div>
+</div>
+
+<p><i class="fas fa-satellite paper-inline-icon"></i><span class="paper-key">UHR-BAT Framework:</span> We propose <span class="paper-key">UHR-BAT</span>, a token compression framework designed for ultra-high-resolution remote-sensing MLLMs under strict context budgets.</p>
+
+<p><i class="fas fa-crosshairs paper-inline-icon"></i><span class="paper-key">Query-Guided Multi-Scale Input:</span> We propose a <span class="paper-key">query-guided, multi-scale input mechanism</span> to integrate text-derived global priors and capture both holistic context and fine-grained details.</p>
+
+<p><i class="fas fa-layer-group paper-inline-icon"></i><span class="paper-key">Region-Wise Preserve and Merge:</span> We propose <span class="paper-key">region-wise preserve and merge strategies</span> to preserve salient local evidence and aggregate redundant background into compact representatives.</p>
+
+<p><i class="fas fa-chart-line paper-inline-icon"></i><span class="paper-key">Empirical Results:</span> Experiments across standard benchmarks confirm that <span class="paper-key">UHR-BAT establishes a new state of the art for efficient UHR understanding</span>, outperforming existing methods under strict token budgets.</p>
+
+<h2 id="method-pipeline">Method Pipeline</h2>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 880px;">
+    <img src="/assets/img/publication_preview/UHRBAT/Method.png" alt="UHR-BAT overview">
+    <p class="project-caption"><span class="paper-key">Method Overview.</span> We encode a high-resolution remote sensing image at <span class="paper-key">multiple scales</span> using a frozen ViT, apply <span class="paper-key">scale-specific positional embeddings</span> to distinguish visual tokens across scales, and obtain an <span class="paper-key">anchor-scale query-to-vision attention map</span> from the MLLM interface. A region partition, induced by <span class="paper-key">SAM</span> or <span class="paper-key">feature-plus-coordinate clustering</span>, enables <span class="paper-key">region-wise preserve-and-merge</span>, while remaining tokens are merged via average pooling to retain coarse context. A final <span class="paper-key">top-k step</span> enforces the per-scale token budget before the processed sequence is fed into the LLM for answer generation.</p>
+  </div>
+</div>
+
+<p><span class="paper-key">UHR-BAT</span> encodes ultra-high-resolution remote-sensing images at multiple scales, uses <span class="paper-key">query-to-vision attention</span> to identify the anchor-scale evidence relevant to the current instruction, and then performs <span class="paper-key">region-wise preserve-and-merge</span> so that salient local structures are retained while redundant background tokens are compressed into compact representatives. The final top-k selection step guarantees that each scale respects the preset token budget.</p>
+
+<h2 id="main-experimental-results">Main Experimental Results</h2>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 680px;">
+    <img src="/assets/img/publication_preview/UHRBAT/XLRSBench.png" alt="XLRS-Bench results">
+    <p class="project-caption"><span class="paper-key">XLRS-Bench Results.</span> This table summarizes <span class="paper-key">perception</span> and <span class="paper-key">reasoning</span> sub-task performance under strict token budgets and shows that UHR-BAT achieves a new state of the art with <span class="paper-metric">44.0</span> weighted average accuracy.</p>
+  </div>
+</div>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 680px;">
+    <img src="/assets/img/publication_preview/UHRBAT/RSHRBench.png" alt="RSHR-Bench results">
+    <p class="project-caption"><span class="paper-key">RSHR-Bench Results.</span> The reported <span class="paper-key">Perception</span> and <span class="paper-key">Reasoning</span> scores show that UHR-BAT remains strong across diverse remote-sensing question types while operating under a constrained visual token budget.</p>
+  </div>
+</div>
+
+<ul>
+  <li>On <span class="paper-key">XLRS-Bench</span>, the paper reports a state-of-the-art weighted average score of <span class="paper-metric">44.0</span> across perception and reasoning tasks. This corresponds to gains of <span class="paper-metric">+22.8</span> over GeoChat, <span class="paper-metric">+20.4</span> over VHM, <span class="paper-metric">+21.0</span> over GPT-4o, <span class="paper-metric">+8.9</span> over Claude 3.7 Sonnet, and <span class="paper-metric">+2.9</span> over LLaVA-OneVision-72B.</li>
+  <li>On <span class="paper-key">MMERealworld-RS</span>, UHR-BAT achieves the best mean score of <span class="paper-metric">33.33</span>. Relative to strong remote-sensing baselines, the reported gains are <span class="paper-metric">+12.01</span> over GeoChat, <span class="paper-metric">+9.15</span> over VHM, and <span class="paper-metric">+4.92</span> over GeoLLaVA-8K. It also exceeds the GPT-4o baseline by <span class="paper-metric">+5.91</span>, with especially large improvements on <span class="paper-key">Position</span> and <span class="paper-key">Color</span>.</li>
+  <li>On <span class="paper-key">RSHR-Bench</span>, the method reaches <span class="paper-metric">29.2</span> on Perception and <span class="paper-metric">45.0</span> on Reasoning, giving the best overall averages among the open-source and remote-sensing baselines reported in the paper. The perception score is also higher than VILA-HD by <span class="paper-metric">+1.2</span>.</li>
+  <li>The efficiency ablation is also informative: on XLRS-Bench, moving from a <span class="paper-key">2K</span> to <span class="paper-key">4K</span> context gives a clear gain for Qwen2.5-VL-7B, from <span class="paper-metric">38.08</span> to <span class="paper-metric">40.58</span>, while pushing to <span class="paper-key">8K</span> brings almost no further benefit. The paper uses this to argue that <span class="paper-key">compressed 4K-context processing</span> is the practical operating point.</li>
+</ul>
+
+<h2 id="qualitative-examples">Qualitative Examples</h2>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 680px;">
+    <img src="/assets/img/publication_preview/UHRBAT/Visual.png" alt="Region-aware attention visualization">
+    <p class="project-caption"><span class="paper-key">Attention Maps.</span> We display original images and enlarged views alongside their corresponding attention maps. The heatmaps show that the model focuses on <span class="paper-key">semantically relevant regions</span>, such as specific vehicles or infrastructure aligned with the textual query, while assigning lower importance to the background.</p>
+  </div>
+</div>
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 680px;">
+    <img src="/assets/img/publication_preview/UHRBAT/example2.png" alt="Qualitative response example">
+    <p class="project-caption"><span class="paper-key">Response Example A.</span> This sample illustrates the versatility of our method in handling <span class="paper-key">spatial reasoning</span> and <span class="paper-key">fine-grained attribute recognition</span> on small objects in ultra-high-resolution scenes.</p>
+  </div>
+</div>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 680px;">
+    <img src="/assets/img/publication_preview/UHRBAT/example3.png" alt="Qualitative response example">
+    <p class="project-caption"><span class="paper-key">Response Example B.</span> This sample further shows that UHR-BAT can answer <span class="paper-key">query-specific reasoning</span> questions while preserving the small visual evidence required for precise recognition.</p>
+  </div>
+</div>
+
+<h2 id="why-these-results-matter">Why These Results Matter</h2>
+
+<p>The main takeaway is that token compression for remote sensing cannot be treated as a purely generic speed trick. The model has to remain sensitive to <span class="paper-key">tiny, sparse, and spatially significant evidence</span>. <span class="paper-key">UHR-BAT</span> shows that <span class="paper-key">budget-aware compression</span> can still improve accuracy when the compression rule is aligned with query semantics and region structure.</p>
+
+<p>For practical Earth observation systems, this matters because the deployment bottleneck is usually not just model quality, but quality under strict memory and latency limits. UHR-BAT is therefore useful not only as a better benchmark result, but also as a stronger recipe for building scalable remote sensing MLLMs.</p>
+
+    </section>
+  
+
+  
+
+  
+
+  <section class="paper-section paper-citation-panel">
+    <div class="paper-section-heading">
+      <h2>BibTeX Citation</h2>
+    </div>
+    <div class="paper-citation-grid">
+      <article class="paper-citation-card paper-citation-card-full">
+        <h3>BibTeX</h3>
+        
+        
+          <pre class="paper-bibtex"><code>@article{dang2026uhr,
+  title={UHR-BAT: Budget-Aware Token Compression Vision-Language model for Ultra-High-Resolution Remote Sensing},
+  author={Dang, Yunkai and Dai, Minxin and Yang, Yuekun and Li, Zhangnan and Li, Wenbin and Miao, Feng and Gao, Yang},
+  journal={arXiv preprint arXiv:2604.13565},
+  year={2026}
+}</code></pre>
+        
+      </article>
+    </div>
+  </section>
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2026 Yunkai  Dang. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+  </body>
+</html>

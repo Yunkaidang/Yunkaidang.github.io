@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Explainable and Interpretable Multimodal Large Language Models: A Comprehensive Survey | Yunkai Dang</title>
+    <meta name="author" content="Yunkai  Dang">
+    <meta name="description" content="Yunkai Dang is with Nanjing University. Research interests include Few-Shot Learning and MLLMs.
+">
+    <meta name="keywords" content="few-shot learning, MLLMs, multimodal LLMs, computer vision, machine learning">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Source+Serif+4:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://yunkaidang.github.io/bibliography/dang2024explainable/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  
+  
+  <body class=" ">
+
+    <!-- Header -->
+    
+
+    <!-- Content -->
+    
+    
+    <div class="container mt-5 container-bibliography">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="paper-page">
+  <section class="paper-hero">
+    <p class="paper-kicker">Project Page</p>
+    <h1 class="paper-title">Explainable and Interpretable Multimodal Large Language Models: A Comprehensive Survey</h1>
+
+    
+      <p class="paper-authors">Yunkai Dang<sup>*</sup>, Kaichen Huang<sup>*</sup>, Jiahao Huo<sup>*</sup>, Yibo Yan, Sirui Huang, Dongrui Liu, Mengxi Gao, Jie Zhang, Chen Qian, Kun Wang, Yong Liu, Jing Shao, Hui Xiong, Xuming Hu<sup>†</sup></p>
+    
+
+    
+      <p class="paper-author-note"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author: xuminghu@hkust-gz.edu.cn.</p>
+    
+
+    
+
+    <p class="paper-venue">
+      
+        arXiv 2024
+      
+    </p>
+
+    
+      <div class="paper-highlight-grid">
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-search" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Structured Map Of MLLM Explainability</h3>
+            <p>The survey organizes methods, benchmarks, and applications into a coherent landscape instead of a loose paper list.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-sitemap" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Data, Model, And Inference Perspectives</h3>
+            <p>It frames interpretability from the viewpoints of data, model internals, and training or inference behavior.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-balance-scale" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Evaluation Standards Still Lag Behind</h3>
+            <p>The paper highlights that faithful, useful, and robust explanation evaluation remains a major open problem.</p>
+          </article>
+        
+      </div>
+    
+
+    <div class="paper-actions">
+      
+        
+          
+          
+          
+          
+          
+            <a href="https://arxiv.org/pdf/2412.02104" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Paper</span>
+            </a>
+          
+        
+      
+      <a href="/" class="paper-btn ghost">Personal Homepage</a>
+    </div>
+  </section>
+
+  
+
+  
+    <section class="paper-section paper-custom-content">
+      <style>
+/* Edit these values directly in this Markdown file. */
+.paper-page .paper-title { font-size: 2rem; }
+.paper-page .paper-authors { font-size: 1.5rem; }
+.paper-page .paper-venue { font-size: 1.42rem; }
+.paper-page .paper-highlight-icon { width: 3.25rem; height: 3.25rem; }
+.paper-page .paper-highlight-icon img { height: 1.85rem; }
+.paper-page .paper-visual,
+.paper-page .paper-section { max-width: 1080px; }
+.paper-page .paper-visual { --paper-hero-image-max-width: 980px; }
+.paper-page .paper-visual img { max-width: min(100%, var(--paper-hero-image-max-width, 980px)); margin: 0 auto; width: 100%; }
+.paper-page .paper-custom-content {
+  --project-grid-gap: 1rem;
+  --project-media-max-width: 100%;
+  --project-image-width: 100%;
+  --project-image-max-width: 100%;
+  font-size: 1.05rem;
+}
+.paper-page .paper-custom-content h2 { font-size: 1.8rem; }
+.paper-page .paper-custom-content h3 { font-size: 1.3rem; }
+.paper-page .paper-custom-content p,
+.paper-page .paper-custom-content li { font-size: 1.05rem; line-height: 1.8; }
+.paper-page .paper-custom-content .project-grid { max-width: 980px; margin-left: auto; margin-right: auto; }
+.paper-page .paper-custom-content .project-media img { max-width: min(100%, var(--project-image-max-width, 100%)); width: min(100%, var(--project-image-width, 100%)); margin: 0 auto; }
+.paper-page .paper-custom-content .project-caption { font-size: 0.92rem; }
+</style>
+
+<h2 id="overview">Overview</h2>
+
+<p>This survey addresses a problem that becomes more urgent as multimodal large language models become more capable: their decisions are harder to inspect, debug, and justify. MLLMs can already solve a wide range of tasks across image-text generation, visual question answering, retrieval, and multimodal reasoning, but the mechanisms behind those outputs often remain opaque. The survey is motivated by the view that performance alone is not enough; <span class="paper-key">interpretability and explainability</span> are necessary if these systems are to be trusted in high-stakes settings.</p>
+
+<p>Rather than listing papers loosely, the survey builds a <span class="paper-key">structured map of the field</span>. It covers explainability methods, benchmark design, evaluation protocols, and open challenges across model architectures, training procedures, and inference strategies.</p>
+
+<h2 id="survey-scope">Survey Scope</h2>
+
+<p>The paper organizes the literature from <span class="paper-key">three main perspectives</span>: <span class="paper-key">data</span>, <span class="paper-key">model</span>, and <span class="paper-key">training or inference</span>. It also examines interpretability at multiple granularities, from token-level interactions to embedding-level representations and higher-level module behavior. In addition to analysis tools, the survey covers architecture design choices, alignment methods, hallucination-oriented explanation work, robustness benchmarks, and application-specific interpretability studies.</p>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 880px;">
+    <img src="/assets/img/publication_preview/survery_explain.png" alt="Explainable and interpretable MLLMs survey overview">
+    <p class="project-caption">The survey organizes MLLM explainability research across data, model, and training or inference dimensions, while also covering benchmarks and applications.</p>
+  </div>
+</div>
+
+<p><i class="fas fa-search paper-inline-icon"></i><span class="paper-key">Explainability Challenge:</span> as multimodal large language models become more capable, their decisions become harder to inspect, debug, and justify.</p>
+
+<p><i class="fas fa-sitemap paper-inline-icon"></i><span class="paper-key">Three-Perspective Framework:</span> the survey organizes the literature from the viewpoints of <span class="paper-key">data</span>, <span class="paper-key">model</span>, and <span class="paper-key">training or inference</span>.</p>
+
+<p><i class="fas fa-balance-scale paper-inline-icon"></i><span class="paper-key">Evaluation Gap:</span> the paper emphasizes that the field still lacks strong standards for measuring whether an explanation is faithful, useful, and robust.</p>
+
+<div class="project-grid project-grid-2">
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-book paper-inline-icon"></i><span class="paper-key">Survey Value:</span> this work acts as infrastructure for the area by giving researchers a structured map of methods, benchmarks, and open problems.</p>
+  </div>
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-file-alt paper-inline-icon"></i><span class="paper-key">Paper Resource:</span> the full survey is available on <a href="https://arxiv.org/pdf/2412.02104" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv paper-inline-icon" style="margin-left:0.3rem;margin-right:0.3rem;"></i>arXiv</a>.</p>
+  </div>
+</div>
+
+<p>This is not a paper list dressed up as a survey. Its main value is that it gives the field a <span class="paper-key">common explanatory framework</span> for understanding where interpretability tools work, where they fail, and where evaluation is still too weak.</p>
+
+<h2 id="main-takeaways">Main Takeaways</h2>
+
+<ul>
+  <li>The explainability landscape is broader than <span class="paper-key">attention visualization alone</span>. The survey covers attribution methods, representation analysis, architecture-level interventions, reward and alignment strategies, and hallucination-oriented diagnosis.</li>
+  <li>
+<span class="paper-key">Benchmarking remains a major bottleneck</span>. The paper emphasizes that explanation quality needs better evaluation protocols, especially when explanations are used for trust, debugging, or alignment rather than only for qualitative inspection.</li>
+  <li>Token-level and representation-level analysis are both important. The survey highlights that MLLM behavior cannot be understood from one level alone because multimodal reasoning mixes <span class="paper-key">visual grounding</span>, <span class="paper-key">language priors</span>, and <span class="paper-key">cross-modal fusion</span>.</li>
+  <li>The field still lacks widely accepted standards for measuring whether an explanation is <span class="paper-key">faithful, useful, and robust</span> under real deployment constraints.</li>
+</ul>
+
+<h2 id="why-this-survey-matters">Why This Survey Matters</h2>
+
+<p>This paper is valuable less as a single algorithm and more as <span class="paper-key">infrastructure for the research area</span>. It gives researchers a common vocabulary for discussing explainability in MLLMs and helps separate what is already mature from what is still poorly understood.</p>
+
+<p>For practitioners, the survey is useful because it makes clear that transparency is not one technique but a stack of decisions: dataset design, representation learning, model architecture, alignment, decoding, and post-hoc analysis all interact. If the goal is more accountable multimodal AI, this survey is a strong starting point.</p>
+
+    </section>
+  
+
+  
+
+  
+
+  <section class="paper-section paper-citation-panel">
+    <div class="paper-section-heading">
+      <h2>BibTeX Citation</h2>
+    </div>
+    <div class="paper-citation-grid">
+      <article class="paper-citation-card paper-citation-card-full">
+        <h3>BibTeX</h3>
+        
+        
+          <pre class="paper-bibtex"><code>@article{dang2024explainable,
+  title={Explainable and Interpretable Multimodal Large Language Models: A Comprehensive Survey},
+  author={Dang, Yunkai and Huang, Kaichen and Huo, Jiahao and Yan, Yibo and Huang, Sirui and Liu, Dongrui and Gao, Mengxi and Zhang, Jie and Qian, Chen and Wang, Kun and Liu, Yong and Shao, Jing and Xiong, Hui and Hu, Xuming},
+  journal={arXiv preprint arXiv:2412.02104},
+  year={2024}
+}</code></pre>
+        
+      </article>
+    </div>
+  </section>
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2026 Yunkai  Dang. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+  </body>
+</html>

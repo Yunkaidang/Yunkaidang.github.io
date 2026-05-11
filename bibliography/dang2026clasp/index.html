@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>CLASP: Class-Adaptive Layer Fusion and Dual-Stage Pruning for Multimodal Large Language Models | Yunkai Dang</title>
+    <meta name="author" content="Yunkai  Dang">
+    <meta name="description" content="Yunkai Dang is with Nanjing University. Research interests include Few-Shot Learning and MLLMs.
+">
+    <meta name="keywords" content="few-shot learning, MLLMs, multimodal LLMs, computer vision, machine learning">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Source+Serif+4:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://yunkaidang.github.io/bibliography/dang2026clasp/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  
+  
+  <body class=" ">
+
+    <!-- Header -->
+    
+
+    <!-- Content -->
+    
+    
+    <div class="container mt-5 container-bibliography">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="paper-page">
+  <section class="paper-hero">
+    <p class="paper-kicker">Project Page</p>
+    <h1 class="paper-title">CLASP: Class-Adaptive Layer Fusion and Dual-Stage Pruning for Multimodal Large Language Models</h1>
+
+    
+      <p class="paper-authors">Yunkai Dang<sup>*</sup>, Yizhu Jiang<sup>*</sup>, Yifan Jiang, Qi Fan, Yinghuan Shi, Wenbin Li<sup>†</sup>, Yang Gao</p>
+    
+
+    
+      <p class="paper-author-note"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author. Correspondence to: liwenbin.nju@gmail.com, yunkaidang1@gmail.com.</p>
+    
+
+    
+      <div class="paper-affiliations">
+        
+          
+          
+            <span class="paper-affiliation">
+              
+                <img src="/assets/img/icons/rlmind.png" alt="Reasoning and Learning Research Group logo" class="paper-affiliation-logo">
+              
+              
+            </span>
+          
+        
+          
+          
+            <a href="https://www.nju.edu.cn/en/" class="paper-affiliation" target="_blank" rel="noopener noreferrer">
+              
+                <img src="/assets/img/icons/nju.png" alt="Nanjing University logo" class="paper-affiliation-logo">
+              
+              
+            </a>
+          
+        
+      </div>
+    
+
+    <p class="paper-venue">
+      
+        arXiv 2026
+      
+    </p>
+
+    
+      <div class="paper-highlight-grid">
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-stream" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Class-Adaptive Layer Fusion</h3>
+            <p>CLASP fuses multi-layer vision features according to the instruction category instead of relying on a fixed single-layer token representation.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-compress-arrows-alt" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Dual-Stage Visual Token Pruning</h3>
+            <p>The pruning budget is split between relevance-preserving pivot tokens and coverage-preserving completion tokens for more robust compression.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-tachometer-alt" aria-hidden="true"></i>
+              
+            </div>
+            <h3>94.7% Performance at 88.9% Pruning</h3>
+            <p>Under very aggressive compression, CLASP still preserves 94.7% of the original performance and remains strong across multiple MLLM backbones.</p>
+          </article>
+        
+      </div>
+    
+
+    <div class="paper-actions">
+      
+        
+          
+          
+          
+          
+          
+            <a href="https://arxiv.org/pdf/2604.12767" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Paper</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://github.com/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://huggingface.co/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face logo" class="paper-btn-logo"></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <span class="paper-btn paper-btn-resource disabled">
+              <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Code (Coming Soon)</span>
+            </span>
+          
+        
+          
+          
+          
+          
+          
+            <span class="paper-btn paper-btn-resource disabled">
+              <span class="paper-btn-icon"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face logo" class="paper-btn-logo"></span>
+              <span class="paper-btn-label">Weights (Coming Soon)</span>
+            </span>
+          
+        
+      
+      <a href="/" class="paper-btn ghost">Personal Homepage</a>
+    </div>
+  </section>
+
+  
+
+  
+    <section class="paper-section paper-custom-content">
+      <style>
+/* Edit these values directly in this Markdown file. */
+.paper-page .paper-title { font-size: 2rem; }
+.paper-page .paper-authors { font-size: 1.5rem; }
+.paper-page .paper-venue { font-size: 1.42rem; }
+.paper-page .paper-affiliation-logo { height: 3.5rem; }
+.paper-page .paper-highlight-icon { width: 3.25rem; height: 3.25rem; }
+.paper-page .paper-highlight-icon img { height: 1.85rem; }
+.paper-page .paper-visual,
+.paper-page .paper-section { max-width: 1080px; }
+.paper-page .paper-visual { --paper-hero-image-max-width: 980px; }
+.paper-page .paper-visual img { max-width: min(100%, var(--paper-hero-image-max-width, 980px)); margin: 0 auto; width: 100%; }
+.paper-page .paper-custom-content {
+  --project-grid-gap: 1rem;
+  --project-media-max-width: 100%;
+  --project-image-width: 100%;
+  --project-image-max-width: 100%;
+  font-size: 1.05rem;
+}
+.paper-page .paper-custom-content h2 { font-size: 1.8rem; }
+.paper-page .paper-custom-content h3 { font-size: 1.3rem; }
+.paper-page .paper-custom-content p,
+.paper-page .paper-custom-content li { font-size: 1.05rem; line-height: 1.8; }
+.paper-page .paper-custom-content .project-grid { max-width: 980px; margin-left: auto; margin-right: auto; }
+.paper-page .paper-custom-content .project-media img { max-width: min(100%, var(--project-image-max-width, 100%)); width: min(100%, var(--project-image-width, 100%)); margin: 0 auto; }
+.paper-page .paper-custom-content .project-caption { font-size: 0.92rem; }
+</style>
+
+<h2 id="project-overview">Project Overview</h2>
+
+<p><span class="paper-key">CLASP</span> studies one of the most persistent efficiency problems in multimodal large language models: <span class="paper-key">visual token redundancy</span>. Existing pruning methods often rely on a single vision layer and a fixed pruning rule, which makes them brittle when the prompt changes or when the task requires a different balance between local detail and global coverage. CLASP addresses this by making both the feature construction stage and the pruning stage <span class="paper-key">adaptive to the semantic class of the instruction</span>.</p>
+
+<p>The core argument of the paper is simple but important: if different prompt types need different visual evidence, then fixed token reduction strategies will inevitably waste budget on the wrong patches or over-prune critical details. CLASP turns token reduction into a prompt-conditioned decision process instead of a one-size-fits-all heuristic.</p>
+
+<h2 id="method-pipeline">Method Pipeline</h2>
+
+<p>The framework first fuses multiple vision encoder layers to construct <span class="paper-key">category-aware visual representations</span> instead of depending on a single-layer feature map. It then performs <span class="paper-key">dual-stage pruning</span>. In the first stage, attention-salient pivot tokens preserve relevance to the instruction. In the second stage, redundancy-aware completion tokens maintain coverage over the scene. This design aims to preserve both “what matters most” and “what would otherwise be lost.”</p>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 880px;">
+    <img src="/assets/img/publication_preview/CLASP.png" alt="CLASP overview">
+    <p class="project-caption">CLASP combines class-adaptive feature fusion with dual-stage pruning to reduce visual tokens without collapsing task robustness.</p>
+  </div>
+</div>
+
+<p><i class="fas fa-compress-arrows-alt paper-inline-icon"></i><span class="paper-key">Visual Token Redundancy:</span> CLASP targets the heavy computational overhead caused by long visual token sequences in multimodal large language models.</p>
+
+<p><i class="fas fa-stream paper-inline-icon"></i><span class="paper-key">Class-Adaptive Layer Fusion:</span> the framework builds category-specific visual representations instead of relying on a fixed single-layer feature map.</p>
+
+<p><i class="fas fa-filter paper-inline-icon"></i><span class="paper-key">Dual-Stage Pruning:</span> attention-salient pivot tokens preserve relevance, while redundancy-aware completion tokens maintain coverage over the full scene.</p>
+
+<div class="project-grid project-grid-2">
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-chart-line paper-inline-icon"></i><span class="paper-key">Aggressive Compression:</span> CLASP still preserves <span class="paper-metric">94.7%</span> normalized performance at <span class="paper-metric">88.9%</span> pruning.</p>
+  </div>
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-file-alt paper-inline-icon"></i><span class="paper-key">Paper Resource:</span> the full method and experiments are available on <a href="https://arxiv.org/pdf/2604.12767" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv paper-inline-icon" style="margin-left:0.3rem;margin-right:0.3rem;"></i>arXiv</a>.</p>
+  </div>
+</div>
+
+<h2 id="main-experimental-results">Main Experimental Results</h2>
+
+<ul>
+  <li>On LLaVA-v1.5-7B, CLASP achieves the best normalized average at all three tested budgets: <span class="paper-metric">98.4</span> with 192 retained tokens, <span class="paper-metric">97.0</span> with 128 tokens, and <span class="paper-metric">94.7</span> with only 64 tokens. These settings correspond to token reductions of <span class="paper-metric">66.7%</span>, <span class="paper-metric">77.8%</span>, and <span class="paper-metric">88.9%</span>.</li>
+  <li>At 192 tokens, the method keeps <span class="paper-metric">98.4%</span> of the original performance and reaches the strongest GQA score reported in the comparison, <span class="paper-metric">60.4</span>, while outperforming classical reduction baselines by large margins such as <span class="paper-metric">+9.9</span> over ToMe and <span class="paper-metric">+10.6</span> over FastV.</li>
+  <li>At 128 tokens, CLASP attains the best <span class="paper-key">POPE</span> score of <span class="paper-metric">85.2</span>, which is especially relevant for faithfulness and object hallucination evaluation under tighter budgets.</li>
+  <li>Even at 64 tokens, CLASP still preserves <span class="paper-metric">94.7%</span> of the original performance and beats the similarity-based DART baseline by <span class="paper-metric">+1.7</span>, showing that the method remains stable in very aggressive pruning regimes.</li>
+  <li>On higher-resolution LLaVA-NeXT-7B with 320 retained tokens, the paper reports a normalized average of <span class="paper-metric">95.2</span>, improving over DART by <span class="paper-metric">+1.3</span> and over HiRED by <span class="paper-metric">+1.9</span>. It also records strong task scores including <span class="paper-metric">62.7</span> GQA, <span class="paper-metric">1723</span> MME, <span class="paper-metric">85.8</span> POPE, and <span class="paper-metric">61.7</span> TextVQA.</li>
+  <li>The Qwen2.5-VL-7B results show that the method transfers beyond LLaVA: at <span class="paper-metric">66.7%</span> pruning, the normalized average improves from <span class="paper-metric">94.1</span> to <span class="paper-metric">96.5</span> over SparseVLM, and at <span class="paper-metric">77.8%</span> pruning it improves from <span class="paper-metric">90.8</span> to <span class="paper-metric">94.4</span>.</li>
+</ul>
+
+<h2 id="why-these-results-matter">Why These Results Matter</h2>
+
+<p>CLASP is useful because it frames efficiency as a <span class="paper-key">conditional modeling problem</span> rather than a hard-coded compression rule. That is a better fit for real multimodal systems, where the visual evidence needed for OCR, counting, grounding, or open-ended reasoning can be very different.</p>
+
+<p>The practical implication is that token pruning does not have to be a crude tradeoff between speed and quality. With prompt-conditioned fusion and budget allocation, a model can cut most of the visual sequence while still preserving the evidence required for robust inference.</p>
+
+    </section>
+  
+
+  
+
+  
+
+  <section class="paper-section paper-citation-panel">
+    <div class="paper-section-heading">
+      <h2>BibTeX Citation</h2>
+    </div>
+    <div class="paper-citation-grid">
+      <article class="paper-citation-card paper-citation-card-full">
+        <h3>BibTeX</h3>
+        
+        
+          <pre class="paper-bibtex"><code>@article{dang2026clasp,
+  title={CLASP: Class-Adaptive Layer Fusion and Dual-Stage Pruning for Multimodal Large Language Models},
+  author={Dang, Yunkai and Jiang, Yizhu and Jiang, Yifan and Fan, Qi and Shi, Yinghuan and Li, Wenbin and Gao, Yang},
+  journal={arXiv preprint arXiv:2604.12767},
+  year={2026}
+}</code></pre>
+        
+      </article>
+    </div>
+  </section>
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2026 Yunkai  Dang. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+  </body>
+</html>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+  <!-- Head -->
+  <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    <!-- Metadata, OpenGraph and Schema.org -->
+    
+
+    <!-- Standard metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FUSE-RSVLM: Feature Fusion Vision-Language Model for Remote Sensing | Yunkai Dang</title>
+    <meta name="author" content="Yunkai  Dang">
+    <meta name="description" content="Yunkai Dang is with Nanjing University. Research interests include Few-Shot Learning and MLLMs.
+">
+    <meta name="keywords" content="few-shot learning, MLLMs, multimodal LLMs, computer vision, machine learning">
+
+
+    <!-- Bootstrap & MDB -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-DF7Zhf293AJxJNTmh5zhoYYIMs2oXitRfBjY+9L//AY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/css/mdb.min.css" integrity="sha256-jpjYvU3G3N6nrrBwXJoVEYI/0zw8htfFnhT9ljN3JJw=" crossorigin="anonymous">
+
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha256-mUZM63G8m73Mcidfrv5E+Y61y7a12O5mW4ezU3bxqW4=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.1/css/academicons.min.css" integrity="sha256-i1+4qU2G2860dGGIOJscdC30s9beBXjFfzjWLjBRsBg=" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Source+Serif+4:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap">
+
+    <!-- Code Syntax Highlighting -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/github.css" media="" id="highlight_theme_light">
+
+    <!-- Styles -->
+    
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;">
+    
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="https://yunkaidang.github.io/bibliography/dang2025fuse-rsvlm/">
+    
+    <!-- Dark Mode -->
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jwarby/jekyll-pygments-themes@master/native.css" media="none" id="highlight_theme_dark">
+
+    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/dark_mode.js"></script>
+    
+
+  </head>
+
+  <!-- Body -->
+  
+  
+  <body class=" ">
+
+    <!-- Header -->
+    
+
+    <!-- Content -->
+    
+    
+    <div class="container mt-5 container-bibliography">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="paper-page">
+  <section class="paper-hero">
+    <p class="paper-kicker">Project Page</p>
+    <h1 class="paper-title">FUSE-RSVLM: Feature Fusion Vision-Language Model for Remote Sensing</h1>
+
+    
+      <p class="paper-authors">Yunkai Dang<sup>*</sup>, Donghao Wang<sup>*</sup>, Jiacheng Yang, Yifan Jiang, Meiyi Zhu, Yuekun Yang, Cong Wang, Qi Fan, Wenbin Li<sup>†</sup>, Yang Gao</p>
+    
+
+    
+      <p class="paper-author-note"><sup>*</sup> Equal contribution. <sup>†</sup> Corresponding author. Correspondence to: yunkaidang@smail.nju.edu.cn, liwenbin@nju.edu.cn.</p>
+    
+
+    
+      <div class="paper-affiliations">
+        
+          
+          
+            <span class="paper-affiliation">
+              
+                <img src="/assets/img/icons/rlmind.png" alt="Reasoning and Learning Research Group logo" class="paper-affiliation-logo">
+              
+              
+            </span>
+          
+        
+          
+          
+            <a href="https://www.nju.edu.cn/en/" class="paper-affiliation" target="_blank" rel="noopener noreferrer">
+              
+                <img src="/assets/img/icons/nju.png" alt="Nanjing University logo" class="paper-affiliation-logo">
+              
+              
+            </a>
+          
+        
+      </div>
+    
+
+    <p class="paper-venue">
+      
+        arXiv 2025
+      
+    </p>
+
+    
+      <div class="paper-highlight-grid">
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-vector-square" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Multi-Feature Fusion for RS Scenes</h3>
+            <p>The model combines global context with fine-grained local features so that small structures and complex scene layouts are preserved.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-sync-alt" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Recurrent Visual Feature Injection</h3>
+            <p>Visual evidence is injected back into the language model during generation to reduce visual forgetting in long reasoning chains.</p>
+          </article>
+        
+          <article class="paper-highlight-card">
+            <div class="paper-highlight-icon">
+              
+                <i class="fas fa-trophy" aria-hidden="true"></i>
+              
+            </div>
+            <h3>Strong Results Across Three Tasks</h3>
+            <p>FUSE-RSVLM reports 65.76% VQA accuracy, 74.51% average classification accuracy, and state-of-the-art captioning results on multiple RS benchmarks.</p>
+          </article>
+        
+      </div>
+    
+
+    <div class="paper-actions">
+      
+        
+          
+          
+          
+          
+          
+            <a href="https://arxiv.org/pdf/2512.24022" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fas fa-file-lines" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">Paper</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://github.com/Yunkaidang/RSVLM" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">RSVLM Code</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://github.com/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><i class="fab fa-github" aria-hidden="true"></i></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+          
+          
+          
+          
+          
+            <a href="https://huggingface.co/RL-MIND" class="paper-btn paper-btn-resource" rel="external nofollow noopener" target="_blank">
+              <span class="paper-btn-icon"><img src="https://huggingface.co/datasets/huggingface/brand-assets/resolve/main/hf-logo.svg" alt="Hugging Face logo" class="paper-btn-logo"></span>
+              <span class="paper-btn-label">RL-MIND</span>
+            </a>
+          
+        
+      
+      <a href="/" class="paper-btn ghost">Personal Homepage</a>
+    </div>
+  </section>
+
+  
+
+  
+    <section class="paper-section paper-custom-content">
+      <style>
+/* Edit these values directly in this Markdown file. */
+.paper-page .paper-title { font-size: 2rem; }
+.paper-page .paper-authors { font-size: 1.5rem; }
+.paper-page .paper-venue { font-size: 1.42rem; }
+.paper-page .paper-affiliation-logo { height: 3.5rem; }
+.paper-page .paper-highlight-icon { width: 3.25rem; height: 3.25rem; }
+.paper-page .paper-highlight-icon img { height: 1.85rem; }
+.paper-page .paper-visual,
+.paper-page .paper-section { max-width: 1080px; }
+.paper-page .paper-visual { --paper-hero-image-max-width: 980px; }
+.paper-page .paper-visual img { max-width: min(100%, var(--paper-hero-image-max-width, 980px)); margin: 0 auto; width: 100%; }
+.paper-page .paper-custom-content {
+  --project-grid-gap: 1rem;
+  --project-media-max-width: 100%;
+  --project-image-width: 100%;
+  --project-image-max-width: 100%;
+  font-size: 1.05rem;
+}
+.paper-page .paper-custom-content h2 { font-size: 1.8rem; }
+.paper-page .paper-custom-content h3 { font-size: 1.3rem; }
+.paper-page .paper-custom-content p,
+.paper-page .paper-custom-content li { font-size: 1.05rem; line-height: 1.8; }
+.paper-page .paper-custom-content .project-grid { max-width: 980px; margin-left: auto; margin-right: auto; }
+.paper-page .paper-custom-content .project-media img { max-width: min(100%, var(--project-image-max-width, 100%)); width: min(100%, var(--project-image-width, 100%)); margin: 0 auto; }
+.paper-page .paper-custom-content .project-caption { font-size: 0.92rem; }
+</style>
+
+<h2 id="project-overview">Project Overview</h2>
+
+<p><span class="paper-key">FUSE-RSVLM</span> is motivated by a recurring mismatch between generic vision-language models and remote sensing imagery. Earth observation scenes differ from natural images in scale, spatial layout, object density, and the importance of <span class="paper-key">very small structures</span>. As a result, models that work well on natural-image VQA or captioning often fail to preserve fine-grained evidence or gradually lose visual grounding during long language decoding.</p>
+
+<p>The paper addresses this by building a remote-sensing-oriented VLM that performs stronger <span class="paper-key">multi-scale feature extraction</span> and repeatedly <span class="paper-key">re-injects visual evidence</span> into the language model. The goal is not only better static image encoding, but also less visual forgetting during generation.</p>
+
+<h2 id="method-pipeline">Method Pipeline</h2>
+
+<p>The model learns and fuses complementary visual representations at multiple scales, combining <span class="paper-key">global scene context</span> with <span class="paper-key">localized detail features</span>. This is especially important in remote sensing, where a large scene overview is necessary but tiny local structures often determine the answer. On top of that, FUSE-RSVLM uses <span class="paper-key">recurrent visual feature injection</span> so that visual evidence is not consumed only once at the beginning of decoding, but can keep influencing later reasoning steps.</p>
+
+<div class="project-grid project-grid-1">
+  <div class="project-media" style="--project-image-max-width: 880px;">
+    <img src="/assets/img/publication_preview/RSVLM.png" alt="FUSE-RSVLM overview">
+    <p class="project-caption">FUSE-RSVLM fuses multi-scale remote sensing features and repeatedly injects them into the language model to reduce visual forgetting.</p>
+  </div>
+</div>
+
+<p><i class="fas fa-satellite paper-inline-icon"></i><span class="paper-key">Remote Sensing Mismatch:</span> generic vision-language models often miss fine-grained geospatial evidence and gradually lose visual grounding during long decoding chains.</p>
+
+<p><i class="fas fa-layer-group paper-inline-icon"></i><span class="paper-key">Multi-Feature Fusion:</span> FUSE-RSVLM combines global scene context with localized detail features so that small but important structures remain visible to the model.</p>
+
+<p><i class="fas fa-sync-alt paper-inline-icon"></i><span class="paper-key">Recurrent Visual Injection:</span> visual evidence is repeatedly fed back into the language model to reduce visual forgetting during captioning, VQA, and classification.</p>
+
+<div class="project-grid project-grid-2">
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-trophy paper-inline-icon"></i><span class="paper-key">Strong Results:</span> the model reports <span class="paper-metric">65.76%</span> VQA accuracy and <span class="paper-metric">74.51%</span> average Top-1 accuracy across remote-sensing classification benchmarks.</p>
+  </div>
+  <div class="project-media" style="--project-image-max-width: 420px;">
+    <p><i class="fas fa-file-alt paper-inline-icon"></i><span class="paper-key">Paper Resource:</span> the full method and experiments are available on <a href="https://arxiv.org/pdf/2512.24022" rel="external nofollow noopener" target="_blank"><i class="ai ai-arxiv paper-inline-icon" style="margin-left:0.3rem;margin-right:0.3rem;"></i>arXiv</a>.</p>
+  </div>
+</div>
+
+<h2 id="main-experimental-results">Main Experimental Results</h2>
+
+<ul>
+  <li>On the <span class="paper-key">VRSBench VQA</span> benchmark, FUSE-RSVLM ranks first overall with an average accuracy of <span class="paper-metric">65.76%</span>. The paper reports improvements of <span class="paper-metric">+4.93</span> over the strongest open-source general VLM, <span class="paper-metric">+3.67</span> over the best closed-source system in the comparison, <span class="paper-metric">+14.25</span> over VHM, and <span class="paper-metric">+21.06</span> over SkySenseGPT.</li>
+  <li>On the same VQA evaluation, the model achieves top results on key perception-oriented tasks, including <span class="paper-metric">65.84</span> on Category and <span class="paper-metric">90.23</span> on Existence. The authors attribute this to better contextual retention from the visual feature injection mechanism.</li>
+  <li>Across seven remote-sensing classification datasets, the model ranks first overall with an average Top-1 accuracy of <span class="paper-metric">74.51%</span>. This is <span class="paper-metric">+2.68</span> over the strongest remote-sensing baseline and <span class="paper-metric">+11.73</span> over the strongest open-source general VLM. The paper highlights gains such as <span class="paper-metric">+3.11</span> on AID and <span class="paper-metric">+4.63</span> on SIRI-WHU.</li>
+  <li>On remote-sensing image captioning, the model achieves <span class="paper-key">new state-of-the-art results</span> on UCM-Captions across all four metrics, with reported gains of <span class="paper-metric">+20.15</span> BLEU-4, <span class="paper-metric">+45.39</span> METEOR, <span class="paper-metric">+260.20</span> CIDEr, and <span class="paper-metric">+56.42</span> ROUGE-L over the best prior result. The paper also reports new best results on Sydney-Captions, with gains of <span class="paper-metric">+12.20</span>, <span class="paper-metric">+17.95</span>, <span class="paper-metric">+121.58</span>, and <span class="paper-metric">+28.10</span> on the same four metrics.</li>
+  <li>On the VRSBench-Cap split, the model reaches <span class="paper-metric">38.64</span> BLEU-4, <span class="paper-metric">28.01</span> METEOR, <span class="paper-metric">38.64</span> CIDEr, and <span class="paper-metric">28.01</span> ROUGE-L. The reported gains include <span class="paper-metric">+18.35</span> BLEU-4, <span class="paper-metric">+3.00</span> METEOR, and <span class="paper-metric">+7.72</span> ROUGE-L over prior methods, indicating that the model generates more semantically grounded captions rather than only maximizing n-gram overlap.</li>
+</ul>
+
+<h2 id="why-these-results-matter">Why These Results Matter</h2>
+
+<p>FUSE-RSVLM is not only another remote-sensing fine-tune. Its main value is that it explicitly treats <span class="paper-key">visual grounding as a process</span> that must be maintained through the whole reasoning chain. That is a better design for captioning, VQA, and classification in high-resolution geospatial imagery.</p>
+
+<p>The experimental results also show that remote-sensing-specific modeling choices still matter even in the era of general VLMs. Multi-scale visual fusion and recurrent grounding remain strong advantages when the visual signal is dense, fine-grained, and spatially structured.</p>
+
+    </section>
+  
+
+  
+
+  
+
+  <section class="paper-section paper-citation-panel">
+    <div class="paper-section-heading">
+      <h2>BibTeX Citation</h2>
+    </div>
+    <div class="paper-citation-grid">
+      <article class="paper-citation-card paper-citation-card-full">
+        <h3>BibTeX</h3>
+        
+        
+          <pre class="paper-bibtex"><code>@article{dang2025fusersvlm,
+  title={FUSE-RSVLM: Feature Fusion Vision-Language Model for Remote Sensing},
+  author={Dang, Yunkai and Wang, Donghao and Yang, Jiacheng and Jiang, Yifan and Zhu, Meiyi and Yang, Yuekun and Wang, Cong and Fan, Qi and Li, Wenbin and Gao, Yang},
+  journal={arXiv preprint arXiv:2512.24022},
+  year={2025}
+}</code></pre>
+        
+      </article>
+    </div>
+  </section>
+</div>
+
+    </div>
+
+    <!-- Footer -->    
+    <footer class="fixed-bottom">
+      <div class="container mt-0">
+        © Copyright 2026 Yunkai  Dang. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>.
+
+      </div>
+    </footer>
+
+    <!-- JavaScripts -->
+    <!-- jQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- Bootsrap & MDB scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha256-fgLAgv7fyCGopR/gBNq2iW3ZKIdqIcyshnUULC4vex8=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mdbootstrap@4.20.0/js/mdb.min.js" integrity="sha256-NdbiivsvWt7VYCt6hYNT3h/th9vSTL4EDWeGs5SN3DA=" crossorigin="anonymous"></script>
+
+    <!-- Masonry & imagesLoaded -->
+  <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+  <script defer src="/assets/js/masonry.js" type="text/javascript"></script>
+    
+  <!-- Medium Zoom JS -->
+  <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.8/dist/medium-zoom.min.js" integrity="sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8=" crossorigin="anonymous"></script>
+  <script defer src="/assets/js/zoom.js"></script><!-- Load Common JS -->
+  <script defer src="/assets/js/common.js"></script>
+  <script defer src="/assets/js/copy_code.js" type="text/javascript"></script>
+
+    
+  <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+  <script async src="https://badge.dimensions.ai/badge.js"></script>
+
+    <!-- MathJax -->
+  <script type="text/javascript">
+    window.MathJax = {
+      tex: {
+        tags: 'ams'
+      }
+    };
+  </script>
+  <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+  <script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+    
+    
+  </body>
+</html>
