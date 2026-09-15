@@ -36,6 +36,9 @@ project_links:
   - label: Model
     url: https://huggingface.co/FelixKAI/UHR-BAT
     icon: huggingface
+  - label: Live Demo
+    url: https://www.modelscope.cn/studios/KAIWANG/UHR-BAT
+    icon: demo
   - label: RL-MIND
     url: https://github.com/RL-MIND
     icon: github
