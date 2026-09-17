@@ -24,4 +24,4 @@ If you have any questions, please feel free to contact me at [yunkaidang1@gmail.
 
 > “Build things that become part of everyone’s life.”
 
-Explore my work on [ModelScope (KAIWANG)](https://www.modelscope.cn/profile/KAIWANG?tab=all) and our group’s projects on [Hugging Face (RL-MIND)](https://huggingface.co/RL-MIND).
+Explore my work on [ModelScope](https://www.modelscope.cn/profile/KAIWANG?tab=all) and our group’s projects on [Hugging Face (RL-MIND)](https://huggingface.co/RL-MIND).
