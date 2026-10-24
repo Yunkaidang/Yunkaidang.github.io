@@ -25,10 +25,16 @@ jobs:
       with:
         ruby-version: '3.2.1'
         bundler-cache: true
+    - name: Install image tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install --no-install-recommends -y imagemagick
+        convert -version
     - name: Install and Build 🔧
       run: |
         npm install -g mermaid.cli
         bundle exec jekyll build
+        test -s _site/assets/img/prof_pic-480.webp
     - name: Deploy 🚀
       if: github.event_name != 'pull_request'
       uses: JamesIves/github-pages-deploy-action@v4
